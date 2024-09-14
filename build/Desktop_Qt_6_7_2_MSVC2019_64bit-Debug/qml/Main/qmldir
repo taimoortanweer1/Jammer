@@ -1,0 +1,4 @@
+module Main
+typeinfo JammerApp.qmltypes
+prefer :/qt/qml/Main/
+

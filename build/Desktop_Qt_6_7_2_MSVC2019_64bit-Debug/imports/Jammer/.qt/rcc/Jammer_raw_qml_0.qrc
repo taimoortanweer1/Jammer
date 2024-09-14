@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/qt/qml/Jammer/">
+    <file alias="Constants.qml">D:/qt-workspace/Jammer/imports/Jammer/Constants.qml</file>
+    <file alias="DirectoryFontLoader.qml">D:/qt-workspace/Jammer/imports/Jammer/DirectoryFontLoader.qml</file>
+    <file alias="EventListModel.qml">D:/qt-workspace/Jammer/imports/Jammer/EventListModel.qml</file>
+    <file alias="EventListSimulator.qml">D:/qt-workspace/Jammer/imports/Jammer/EventListSimulator.qml</file>
+  </qresource>
+</RCC>
+

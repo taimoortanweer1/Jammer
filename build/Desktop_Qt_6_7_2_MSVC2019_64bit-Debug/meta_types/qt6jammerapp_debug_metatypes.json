@@ -1,0 +1,49 @@
+[
+    {
+        "classes": [
+            {
+                "className": "DataAcquisition",
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "sum",
+                        "notify": "sumChanged",
+                        "read": "getSum",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setSum"
+                    }
+                ],
+                "qualifiedClassName": "DataAcquisition",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "sumChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "DataAcquisition.h",
+        "outputRevision": 68
+    }
+]

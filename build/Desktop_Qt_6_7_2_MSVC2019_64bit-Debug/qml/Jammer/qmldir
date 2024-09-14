@@ -1,0 +1,11 @@
+module Jammer
+linktarget Jammerplugin
+optional plugin Jammerplugin
+classname JammerPlugin
+typeinfo Jammer.qmltypes
+prefer :/qt/qml/Jammer/
+singleton Constants 1.0 Constants.qml
+DirectoryFontLoader 1.0 DirectoryFontLoader.qml
+EventListModel 1.0 EventListModel.qml
+EventListSimulator 1.0 EventListSimulator.qml
+

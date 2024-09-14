@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"imports/Jammer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "Jammer_tooling::@dfadc6eefe52794702fd"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "Jammer_autogen_timestamp_deps::@dfadc6eefe52794702fd",
+	"isGeneratorProvided" : true,
+	"name" : "Jammer_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "imports/Jammer",
+		"source" : "imports/Jammer"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

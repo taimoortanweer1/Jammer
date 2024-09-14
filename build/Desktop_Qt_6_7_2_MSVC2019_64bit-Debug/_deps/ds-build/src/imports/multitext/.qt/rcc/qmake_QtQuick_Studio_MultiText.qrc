@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/MultiText">
+    <file alias="qmldir">D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/QtQuick/Studio/MultiText/qmldir</file>
+  </qresource>
+</RCC>
+
