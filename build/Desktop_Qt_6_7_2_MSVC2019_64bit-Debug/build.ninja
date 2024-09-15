@@ -6000,7 +6000,7 @@ build _deps\ds-build\src\imports\utils\CMakeFiles\QuickStudioUtilsplugin_init_au
 #############################################
 # Order-only phony target for content
 
-build cmake_object_order_depends_target_content: phony || content\.qt\rcc\qrc_content_raw_qml_0.cpp content\.qt\rcc\qrc_qmake_content.cpp content\.rcc\qmlcache\content_App_qml.cpp content\.rcc\qmlcache\content_Screen01.ui_qml.cpp content\.rcc\qmlcache\content_qmlcache_loader.cpp content\content_autogen content\content_autogen\mocs_compilation.cpp content\content_autogen\timestamp content\content_autogen_timestamp_deps content\content_qmltyperegistrations.cpp content\content_tooling content\meta_types\content_json_file_list.txt content\meta_types\content_json_file_list.txt.timestamp content\meta_types\qt6content_debug_metatypes.json content\meta_types\qt6content_debug_metatypes.json.gen qml\content\content.qmltypes
+build cmake_object_order_depends_target_content: phony || content\.qt\rcc\qrc_content_raw_qml_0.cpp content\.qt\rcc\qrc_qmake_content.cpp content\.rcc\qmlcache\content_App_qml.cpp content\.rcc\qmlcache\content_MyProgressBar_qml.cpp content\.rcc\qmlcache\content_Screen01.ui_qml.cpp content\.rcc\qmlcache\content_SignalBar_qml.cpp content\.rcc\qmlcache\content_qmlcache_loader.cpp content\content_autogen content\content_autogen\mocs_compilation.cpp content\content_autogen\timestamp content\content_autogen_timestamp_deps content\content_qmltyperegistrations.cpp content\content_tooling content\meta_types\content_json_file_list.txt content\meta_types\content_json_file_list.txt.timestamp content\meta_types\qt6content_debug_metatypes.json content\meta_types\qt6content_debug_metatypes.json.gen qml\content\content.qmltypes
 
 build content\CMakeFiles\content.dir\content_autogen\mocs_compilation.cpp.obj: CXX_COMPILER__content_unscanned_Debug D$:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\content_autogen\mocs_compilation.cpp || cmake_object_order_depends_target_content
   DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_QMLBUILTINS_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -6056,6 +6056,24 @@ build content\CMakeFiles\content.dir\.rcc\qmlcache\content_Screen01.ui_qml.cpp.o
   TARGET_COMPILE_PDB = content\CMakeFiles\content.dir\content.pdb
   TARGET_PDB = content\content.pdb
 
+build content\CMakeFiles\content.dir\.rcc\qmlcache\content_MyProgressBar_qml.cpp.obj: CXX_COMPILER__content_unscanned_Debug D$:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\.rcc\qmlcache\content_MyProgressBar_qml.cpp || cmake_object_order_depends_target_content
+  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_QMLBUILTINS_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -ID:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\content_autogen\include -ID:\qt-workspace\Jammer\content -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml\6.7.2\QtQml -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore\6.7.2\QtCore -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore -external:IC:\Qt\6.7.2\msvc2019_64\include -external:IC:\Qt\6.7.2\msvc2019_64\mkspecs\win32-msvc -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins\6.7.2\QtQmlBuiltins -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlIntegration -external:IC:\Qt\6.7.2\msvc2019_64\include\QtNetwork -external:W0
+  OBJECT_DIR = content\CMakeFiles\content.dir
+  OBJECT_FILE_DIR = content\CMakeFiles\content.dir\.rcc\qmlcache
+  TARGET_COMPILE_PDB = content\CMakeFiles\content.dir\content.pdb
+  TARGET_PDB = content\content.pdb
+
+build content\CMakeFiles\content.dir\.rcc\qmlcache\content_SignalBar_qml.cpp.obj: CXX_COMPILER__content_unscanned_Debug D$:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\.rcc\qmlcache\content_SignalBar_qml.cpp || cmake_object_order_depends_target_content
+  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_QMLBUILTINS_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -ID:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\content_autogen\include -ID:\qt-workspace\Jammer\content -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml\6.7.2\QtQml -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore\6.7.2\QtCore -external:IC:\Qt\6.7.2\msvc2019_64\include\QtCore -external:IC:\Qt\6.7.2\msvc2019_64\include -external:IC:\Qt\6.7.2\msvc2019_64\mkspecs\win32-msvc -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins\6.7.2 -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins\6.7.2\QtQmlBuiltins -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlBuiltins -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQml -external:IC:\Qt\6.7.2\msvc2019_64\include\QtQmlIntegration -external:IC:\Qt\6.7.2\msvc2019_64\include\QtNetwork -external:W0
+  OBJECT_DIR = content\CMakeFiles\content.dir
+  OBJECT_FILE_DIR = content\CMakeFiles\content.dir\.rcc\qmlcache
+  TARGET_COMPILE_PDB = content\CMakeFiles\content.dir\content.pdb
+  TARGET_PDB = content\content.pdb
+
 build content\CMakeFiles\content.dir\.qt\rcc\qrc_content_raw_qml_0.cpp.obj: CXX_COMPILER__content_unscanned_Debug D$:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content\.qt\rcc\qrc_content_raw_qml_0.cpp || cmake_object_order_depends_target_content
   DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_QMLBUILTINS_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Zc:__cplusplus -permissive- -utf-8
@@ -6073,7 +6091,7 @@ build content\CMakeFiles\content.dir\.qt\rcc\qrc_content_raw_qml_0.cpp.obj: CXX_
 #############################################
 # Link the static library content\content.lib
 
-build content\content.lib: CXX_STATIC_LIBRARY_LINKER__content_Debug content\CMakeFiles\content.dir\content_autogen\mocs_compilation.cpp.obj content\CMakeFiles\content.dir\content_qmltyperegistrations.cpp.obj content\CMakeFiles\content.dir\.qt\rcc\qrc_qmake_content.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_qmlcache_loader.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_App_qml.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_Screen01.ui_qml.cpp.obj content\CMakeFiles\content.dir\.qt\rcc\qrc_content_raw_qml_0.cpp.obj || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
+build content\content.lib: CXX_STATIC_LIBRARY_LINKER__content_Debug content\CMakeFiles\content.dir\content_autogen\mocs_compilation.cpp.obj content\CMakeFiles\content.dir\content_qmltyperegistrations.cpp.obj content\CMakeFiles\content.dir\.qt\rcc\qrc_qmake_content.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_qmlcache_loader.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_App_qml.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_Screen01.ui_qml.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_MyProgressBar_qml.cpp.obj content\CMakeFiles\content.dir\.rcc\qmlcache\content_SignalBar_qml.cpp.obj content\CMakeFiles\content.dir\.qt\rcc\qrc_content_raw_qml_0.cpp.obj || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
   LANGUAGE_COMPILE_FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = content\CMakeFiles\content.dir
@@ -6181,7 +6199,7 @@ build content\content_qmllint_module: phony content\CMakeFiles\content_qmllint_m
 #############################################
 # Utility command for content_tooling
 
-build content\content_tooling: phony qml\content\App.qml qml\content\Screen01.ui.qml qml\content\fonts\fonts.txt qml\content\images\background.png
+build content\content_tooling: phony qml\content\App.qml qml\content\Screen01.ui.qml qml\content\MyProgressBar.qml qml\content\SignalBar.qml qml\content\fonts\fonts.txt qml\content\images\background.png qml\content\images\EmptyBattery.png
 
 # =============================================================================
 # Object build statements for OBJECT_LIBRARY target content_resources_2
@@ -6400,9 +6418,27 @@ build content\.rcc\qmlcache\content_Screen01.ui_qml.cpp | ${cmake_ninja_workdir}
 
 
 #############################################
+# Custom command for content\.rcc\qmlcache\content_MyProgressBar_qml.cpp
+
+build content\.rcc\qmlcache\content_MyProgressBar_qml.cpp | ${cmake_ninja_workdir}content\.rcc\qmlcache\content_MyProgressBar_qml.cpp: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmlcachegen.exe D$:\qt-workspace\Jammer\content\MyProgressBar.qml content\.qt\rcc\qmake_content.qrc content\.qt\rcc\content_raw_qml_0.qrc qml\content\content.qmltypes qml\content\qmldir || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmlcache && D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.7.2/msvc2019_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/content/MyProgressBar.qml -I D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/ -I C:/Qt/6.7.2/msvc2019_64/./qml -i D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/qmldir --resource D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/qmake_content.qrc --resource D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/content_raw_qml_0.qrc -o D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmlcache/content_MyProgressBar_qml.cpp D:/qt-workspace/Jammer/content/MyProgressBar.qml"
+  DESC = Generating .rcc/qmlcache/content_MyProgressBar_qml.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for content\.rcc\qmlcache\content_SignalBar_qml.cpp
+
+build content\.rcc\qmlcache\content_SignalBar_qml.cpp | ${cmake_ninja_workdir}content\.rcc\qmlcache\content_SignalBar_qml.cpp: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmlcachegen.exe D$:\qt-workspace\Jammer\content\SignalBar.qml content\.qt\rcc\qmake_content.qrc content\.qt\rcc\content_raw_qml_0.qrc qml\content\content.qmltypes qml\content\qmldir || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmlcache && D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.7.2/msvc2019_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/content/SignalBar.qml -I D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/ -I C:/Qt/6.7.2/msvc2019_64/./qml -i D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/qmldir --resource D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/qmake_content.qrc --resource D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/content_raw_qml_0.qrc -o D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmlcache/content_SignalBar_qml.cpp D:/qt-workspace/Jammer/content/SignalBar.qml"
+  DESC = Generating .rcc/qmlcache/content_SignalBar_qml.cpp
+  restat = 1
+
+
+#############################################
 # Custom command for content\.qt\rcc\qrc_content_raw_qml_0.cpp
 
-build content\.qt\rcc\qrc_content_raw_qml_0.cpp | ${cmake_ninja_workdir}content\.qt\rcc\qrc_content_raw_qml_0.cpp: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml D$:\qt-workspace\Jammer\content\fonts\fonts.txt D$:\qt-workspace\Jammer\content\images\background.png content\.qt\rcc\content_raw_qml_0.qrc C$:\Qt\6.7.2\msvc2019_64\.\bin\rcc.exe || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
+build content\.qt\rcc\qrc_content_raw_qml_0.cpp | ${cmake_ninja_workdir}content\.qt\rcc\qrc_content_raw_qml_0.cpp: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml D$:\qt-workspace\Jammer\content\MyProgressBar.qml D$:\qt-workspace\Jammer\content\SignalBar.qml D$:\qt-workspace\Jammer\content\fonts\fonts.txt D$:\qt-workspace\Jammer\content\images\background.png D$:\qt-workspace\Jammer\content\images\EmptyBattery.png content\.qt\rcc\content_raw_qml_0.qrc C$:\Qt\6.7.2\msvc2019_64\.\bin\rcc.exe || content\content_autogen content\content_autogen_timestamp_deps content\content_tooling
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\content && C:\Qt\6.7.2\msvc2019_64\.\bin\rcc.exe --output D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/qrc_content_raw_qml_0.cpp --name content_raw_qml_0 D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/content_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource content_raw_qml_0
   restat = 1
@@ -6448,21 +6484,21 @@ build content\contentplugin_autogen\timestamp content\contentplugin_autogen\mocs
 #############################################
 # Custom command for content\CMakeFiles\content_qmllint
 
-build content\CMakeFiles\content_qmllint | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml content\.rcc\qmllint\content.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
+build content\CMakeFiles\content_qmllint | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml D$:\qt-workspace\Jammer\content\MyProgressBar.qml D$:\qt-workspace\Jammer\content\SignalBar.qml content\.rcc\qmllint\content.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.7.2/msvc2019_64/bin/qmllint.exe @D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmllint/content.rsp"
 
 
 #############################################
 # Custom command for content\CMakeFiles\content_qmllint_json
 
-build content\CMakeFiles\content_qmllint_json | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint_json: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml content\.rcc\qmllint\content_json.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
+build content\CMakeFiles\content_qmllint_json | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint_json: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml D$:\qt-workspace\Jammer\content\MyProgressBar.qml D$:\qt-workspace\Jammer\content\SignalBar.qml content\.rcc\qmllint\content_json.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.7.2/msvc2019_64/bin/qmllint.exe @D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmllint/content_json.rsp"
 
 
 #############################################
 # Custom command for content\CMakeFiles\content_qmllint_module
 
-build content\CMakeFiles\content_qmllint_module | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint_module: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml content\.rcc\qmllint\content_module.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
+build content\CMakeFiles\content_qmllint_module | ${cmake_ninja_workdir}content\CMakeFiles\content_qmllint_module: CUSTOM_COMMAND C$:\Qt\6.7.2\msvc2019_64\bin\qmllint.exe D$:\qt-workspace\Jammer\content\App.qml D$:\qt-workspace\Jammer\content\Screen01.ui.qml D$:\qt-workspace\Jammer\content\MyProgressBar.qml D$:\qt-workspace\Jammer\content\SignalBar.qml content\.rcc\qmllint\content_module.rsp || JammerApp_qmltyperegistration _deps\ds-build\src\imports\application\QuickStudioApplication_qmltyperegistration _deps\ds-build\src\imports\components\QuickStudioComponents_qmltyperegistration _deps\ds-build\src\imports\components\all_qmltyperegistrations _deps\ds-build\src\imports\effects_qt6\QuickStudioEffects_qmltyperegistration _deps\ds-build\src\imports\flowview\FlowView_qmltyperegistration _deps\ds-build\src\imports\logichelper\QuickStudioLogicHelper_qmltyperegistration _deps\ds-build\src\imports\multitext\QuickStudioMultiText_qmltyperegistration _deps\ds-build\src\imports\tools\eventsimulator\QuickStudioEventSimulator_qmltyperegistration _deps\ds-build\src\imports\tools\eventsystem\QuickStudioEventSystem_qmltyperegistration _deps\ds-build\src\imports\utils\QuickStudioUtils_qmltyperegistration content\content_qmltyperegistration imports\Jammer\Jammer_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && D:\qt-workspace\Jammer\build\Desktop_Qt_6_7_2_MSVC2019_64bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.7.2/msvc2019_64/bin/qmllint.exe @D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.rcc/qmllint/content_module.rsp"
 
 
@@ -6485,6 +6521,24 @@ build qml\content\Screen01.ui.qml | ${cmake_ninja_workdir}qml\content\Screen01.u
 
 
 #############################################
+# Custom command for qml\content\MyProgressBar.qml
+
+build qml\content\MyProgressBar.qml | ${cmake_ninja_workdir}qml\content\MyProgressBar.qml: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\MyProgressBar.qml
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/qt-workspace/Jammer/content/MyProgressBar.qml D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/MyProgressBar.qml"
+  DESC = Copying MyProgressBar.qml to D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/MyProgressBar.qml
+  restat = 1
+
+
+#############################################
+# Custom command for qml\content\SignalBar.qml
+
+build qml\content\SignalBar.qml | ${cmake_ninja_workdir}qml\content\SignalBar.qml: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\SignalBar.qml
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/qt-workspace/Jammer/content/SignalBar.qml D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/SignalBar.qml"
+  DESC = Copying SignalBar.qml to D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/SignalBar.qml
+  restat = 1
+
+
+#############################################
 # Custom command for qml\content\fonts\fonts.txt
 
 build qml\content\fonts\fonts.txt | ${cmake_ninja_workdir}qml\content\fonts\fonts.txt: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\fonts\fonts.txt
@@ -6499,6 +6553,15 @@ build qml\content\fonts\fonts.txt | ${cmake_ninja_workdir}qml\content\fonts\font
 build qml\content\images\background.png | ${cmake_ninja_workdir}qml\content\images\background.png: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\images\background.png
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/qt-workspace/Jammer/content/images/background.png D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/images/background.png"
   DESC = Copying images/background.png to D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/images/background.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\content\images\EmptyBattery.png
+
+build qml\content\images\EmptyBattery.png | ${cmake_ninja_workdir}qml\content\images\EmptyBattery.png: CUSTOM_COMMAND D$:\qt-workspace\Jammer\content\images\EmptyBattery.png
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\qt-workspace\Jammer\content && C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/qt-workspace/Jammer/content/images/EmptyBattery.png D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/images/EmptyBattery.png"
+  DESC = Copying images/EmptyBattery.png to D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml/content/images/EmptyBattery.png
   restat = 1
 
 

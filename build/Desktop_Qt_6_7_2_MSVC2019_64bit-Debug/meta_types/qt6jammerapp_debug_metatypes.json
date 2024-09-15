@@ -19,6 +19,21 @@
                         "type": "int",
                         "user": false,
                         "write": "setSum"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "battery",
+                        "notify": "batteryChanged",
+                        "read": "getbattery",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setbattery"
                     }
                 ],
                 "qualifiedClassName": "DataAcquisition",
@@ -32,6 +47,24 @@
                             }
                         ],
                         "name": "sumChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "batteryChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "name": "updateBattery",
                         "returnType": "void"
                     }
                 ],

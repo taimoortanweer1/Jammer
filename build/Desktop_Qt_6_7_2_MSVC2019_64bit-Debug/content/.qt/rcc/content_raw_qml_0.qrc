@@ -2,8 +2,11 @@
   <qresource prefix="/qt/qml/content/">
     <file alias="App.qml">D:/qt-workspace/Jammer/content/App.qml</file>
     <file alias="Screen01.ui.qml">D:/qt-workspace/Jammer/content/Screen01.ui.qml</file>
+    <file alias="MyProgressBar.qml">D:/qt-workspace/Jammer/content/MyProgressBar.qml</file>
+    <file alias="SignalBar.qml">D:/qt-workspace/Jammer/content/SignalBar.qml</file>
     <file alias="fonts/fonts.txt">D:/qt-workspace/Jammer/content/fonts/fonts.txt</file>
     <file alias="images/background.png">D:/qt-workspace/Jammer/content/images/background.png</file>
+    <file alias="images/EmptyBattery.png">D:/qt-workspace/Jammer/content/images/EmptyBattery.png</file>
   </qresource>
 </RCC>
 

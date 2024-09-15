@@ -3,8 +3,8 @@ import QtQuick 6.2
 import QtQuick.Studio.Application
 
 QtObject {
-    readonly property int width: 800
-    readonly property int height: 600
+    readonly property int width: 1024 //hello122
+    readonly property int height: 768
 
     property string relativeFontDirectory: "fonts"
 

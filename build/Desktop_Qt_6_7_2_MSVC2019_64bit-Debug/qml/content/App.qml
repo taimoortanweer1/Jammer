@@ -13,6 +13,8 @@ Window {
 
     Screen01 {
         id: mainScreen
+        myProgressBarPBarValue: battery
+        mySignalBarValue: signalData
     }
 
 }
