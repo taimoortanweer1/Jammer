@@ -7,7 +7,7 @@
 #include "app_environment.h"
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
-#include "DataAcquisition.h"
+#include "BackendSingleton.h"
 #include <QQmlContext>
 
 int main(int argc, char *argv[])
@@ -16,10 +16,13 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    DataAcquisition d1;
+    //DataAcquisition d1;
+
+    // Create the singleton instance
+    BackendSingleton* m_BackendSingleton = BackendSingleton::instance();
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("d1", &d1); // Expose the instance to QML
+    qmlRegisterSingletonInstance("BackendSingleton", 1, 0, "BackendSingleton", m_BackendSingleton);
 
     const QUrl url(u"qrc:/qt/qml/Main/main.qml"_qs);
     QObject::connect(

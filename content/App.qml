@@ -3,6 +3,7 @@
 
 import QtQuick 6.2
 import Jammer
+import BackendSingleton 1.0
 
 Window {
     width: mainScreen.width
@@ -13,8 +14,8 @@ Window {
 
     Screen01 {
         id: mainScreen
-        myProgressBarPBarValue: battery
-        mySignalBarValue: signalData
+        myProgressBarPBarValue: BackendSingleton.battery
+        mySignalBarValue: BackendSingleton.battery
     }
 
 }

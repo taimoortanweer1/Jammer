@@ -14,7 +14,8 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
 endif()
 
 qt_add_executable(JammerApp src/main.cpp
-    src/DataAcquisition.h src/DataAcquisition.cpp)
+    src/DataAcquisition.h src/DataAcquisition.cpp
+    src/BackendSingleton.h src/BackendSingleton.cpp)
 
 qt_add_resources(JammerApp "configuration"
     PREFIX "/"

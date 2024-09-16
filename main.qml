@@ -4,9 +4,10 @@ C++ project. */
 import QtQuick
 import content
 
+
 App {
 
-    property int intSum  : d1.sum
-    property int battery : d1.battery
-    property int signalData  : d1.battery
+    // property int intSum  : d1.sum
+    // property int battery : d1.battery
+    // property int signalData  : d1.battery
 }
