@@ -24,15 +24,38 @@ void BackendSingleton::setbattery(int value) {
     }
 }
 
+int BackendSingleton::getSignalStrength() const
+{
+    return m_signalStrength;
+}
 
-void BackendSingleton::updateBattery()
+void BackendSingleton::setSignalStrength(int value)
+{
+    if (value != m_signalStrength) {
+        m_signalStrength = value;
+        emit signalStrengthChanged(value);
+    }
+}
+
+
+void BackendSingleton::updateData()
 {
     static int i = 0;
+    static int j = 0;
     if(i > 99)
+    {
         i = 0;
+    }
+    if( j > 99)
+    {
+        j = 0;
+    }
 
     i++;
+    j=j+4;
 
     setbattery(i);
+    setSignalStrength(j);
+
 }
 

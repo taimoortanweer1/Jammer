@@ -8,6 +8,7 @@ class BackendSingleton : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int battery     READ getbattery WRITE setbattery NOTIFY batteryChanged)
+    Q_PROPERTY(int signalStrength     READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
 
 
 
@@ -16,24 +17,29 @@ public:
 
     int getbattery() const;
     void setbattery(int value);
-
+    int getSignalStrength() const;
+    void setSignalStrength(int value);
 
 
 signals:
 
     void batteryChanged(int value);
+    void signalStrengthChanged(int value);
+
 
 private slots:
-    void updateBattery();
+    void updateData();
 
 
 private:
     int m_battery;
-    QTimer batteryTimer;
+    int m_signalStrength;
+
+    QTimer timerData;
 
     BackendSingleton() {
-        connect(&batteryTimer, SIGNAL(timeout()),this, SLOT(updateBattery()));
-        batteryTimer.start(50);
+        connect(&timerData, SIGNAL(timeout()),this, SLOT(updateData()));
+        timerData.start(50);
     };
     static BackendSingleton* m_instance;
 };

@@ -15,7 +15,7 @@ Window {
     BaseScreen {
         id: mainScreen
         myProgressBarPBarValue: BackendSingleton.battery
-        mySignalBarValue: BackendSingleton.battery
+        mySignalBarValue: BackendSingleton.signalStrength
 
 
         VideoComponent {
