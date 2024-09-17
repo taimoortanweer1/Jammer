@@ -8,7 +8,7 @@
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 #include "BackendSingleton.h"
-#include <QQmlContext>
+
 
 int main(int argc, char *argv[])
 {
@@ -18,10 +18,12 @@ int main(int argc, char *argv[])
 
 
     // Create the singleton instance
-    BackendSingleton* m_BackendSingleton = BackendSingleton::instance();
+   BackendSingleton* m_BackendSingleton = BackendSingleton::instance();
 
-    QQmlApplicationEngine engine;
-    qmlRegisterSingletonInstance("BackendSingleton", 1, 0, "BackendSingleton", m_BackendSingleton);
+   QQmlApplicationEngine engine;
+   qmlRegisterSingletonInstance("MyLib", 1, 0, "BackendSingleton", m_BackendSingleton);
+
+
 
     const QUrl url(u"qrc:/qt/qml/Main/main.qml"_qs);
     QObject::connect(

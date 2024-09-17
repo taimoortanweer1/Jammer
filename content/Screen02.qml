@@ -4,8 +4,7 @@ Item {
 
     VideoComponent
     {
-
-
+        anchors.fill: parent
     }
 
 }

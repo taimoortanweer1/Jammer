@@ -9,13 +9,15 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Multimedia Qml Quick)
 
-if (Qt6_VERSION VERSION_GREATER_EQUAL 6.5)
+if (Qt6_VERSION VERSION_GREATER_EQUAL 6.2)
     qt_standard_project_setup()
 endif()
 
 qt_add_executable(JammerApp src/main.cpp
     src/DataAcquisition.h src/DataAcquisition.cpp
     src/BackendSingleton.h src/BackendSingleton.cpp
+    src/DataSingle.h src/DataSingle.cpp
+
 )
 
 qt_add_resources(JammerApp "configuration"

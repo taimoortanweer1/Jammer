@@ -10,6 +10,7 @@ import QtQuick 6.7
 import QtQuick.Controls 6.7
 import Jammer
 import QtQuick.Layouts
+
 Item {
     id: root
     width: Constants.width
@@ -22,7 +23,6 @@ Item {
         anchors.fill: parent
         source: "images/background.png"
         fillMode: Image.Stretch
-
     }
 
     Item {
@@ -66,8 +66,4 @@ Item {
             height: 50
         }
     }
-
-
-
-
 }

@@ -3,11 +3,14 @@ C++ project. */
 
 import QtQuick
 import content
+import MyLib 1.0
 
 
 App {
 
-    // property int intSum  : d1.sum
-    // property int battery : d1.battery
-    // property int signalData  : d1.battery
+    id: app
+    property int battery     : BackendSingleton.battery
+    property int signalData  : BackendSingleton.signalStrength
+
+
 }
