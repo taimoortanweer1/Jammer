@@ -12,10 +12,18 @@ Window {
     visible: true
     title: "Jammer"
 
-    Screen01 {
+    BaseScreen {
         id: mainScreen
         myProgressBarPBarValue: BackendSingleton.battery
         mySignalBarValue: BackendSingleton.battery
+
+
+        VideoComponent {
+
+            playVideo: true
+
+        }
+
     }
 
 }

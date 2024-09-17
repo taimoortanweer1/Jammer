@@ -8,11 +8,13 @@ qt6_add_qml_module(content
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
         App.qml
-        Screen01.ui.qml
+        BaseScreen.ui.qml
         MyProgressBar.qml
     RESOURCES
         fonts/fonts.txt
         RESOURCES images/background.png
         RESOURCES images/EmptyBattery.png
         QML_FILES SignalBar.qml
+        QML_FILES VideoComponent.qml
+        QML_FILES Screen02.qml
 )

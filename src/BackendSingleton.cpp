@@ -12,16 +12,6 @@ BackendSingleton* BackendSingleton::instance()
     return m_instance;
 }
 
-int BackendSingleton::getSum() const {
-    return m_sum;
-}
-
-void BackendSingleton::setSum(int value) {
-    if (value != m_sum) {
-        m_sum = value;
-        emit sumChanged(value);
-    }
-}
 
 int BackendSingleton::getbattery() const {
     return m_battery;
@@ -34,6 +24,7 @@ void BackendSingleton::setbattery(int value) {
     }
 }
 
+
 void BackendSingleton::updateBattery()
 {
     static int i = 0;
@@ -44,3 +35,4 @@ void BackendSingleton::updateBattery()
 
     setbattery(i);
 }
+

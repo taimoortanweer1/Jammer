@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    //DataAcquisition d1;
 
     // Create the singleton instance
     BackendSingleton* m_BackendSingleton = BackendSingleton::instance();
