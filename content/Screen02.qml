@@ -1,10 +1,18 @@
-import QtQuick 6.2
-
+import QtQuick 6.7
+import QtQuick.Controls 6.7
+import Jammer
+import QtQuick.Layouts
 Item {
 
-    VideoComponent
+
+    Rectangle
     {
         anchors.fill: parent
+        VideoComponent
+        {
+            playVideo: true
+            anchors.fill: parent
+        }
     }
-
+    
 }

@@ -17,11 +17,12 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
 
+
     // Create the singleton instance
    BackendSingleton* m_BackendSingleton = BackendSingleton::instance();
 
    QQmlApplicationEngine engine;
-   qmlRegisterSingletonInstance("MyLib", 1, 0, "BackendSingleton", m_BackendSingleton);
+   qmlRegisterSingletonInstance("MyLib2", 1, 0, "BackendSingleton", m_BackendSingleton);
 
 
 

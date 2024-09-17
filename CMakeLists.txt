@@ -26,6 +26,8 @@ qt_add_resources(JammerApp "configuration"
         qtquickcontrols2.conf
 )
 
+
+
 target_link_libraries(JammerApp PRIVATE
     Qt6::Core
     Qt6::Gui
@@ -33,6 +35,8 @@ target_link_libraries(JammerApp PRIVATE
     Qt6::Quick
     Qt6::Multimedia
 )
+
+
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
 set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}

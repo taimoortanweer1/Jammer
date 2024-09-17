@@ -9,15 +9,15 @@ Item {
     Rectangle {
         id : cameraUI
 
-        width:200
-        height: 200
-        color: "black"
+        anchors.fill: parent
+        color: "transparent"
 
 
         CaptureSession {
             id: captureSession
             camera: Camera {
                 id: camera
+
 
             }
             imageCapture: ImageCapture {
@@ -36,6 +36,7 @@ Item {
             id: viewfinder
             visible: true
             anchors.fill: parent
+            fillMode: VideoOutput.Stretch
         }
 
         Component.onCompleted:
@@ -71,3 +72,9 @@ Item {
     }
 
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorColor:"#00000c"}
+}
+##^##*/

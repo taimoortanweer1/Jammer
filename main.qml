@@ -3,14 +3,6 @@ C++ project. */
 
 import QtQuick
 import content
-import MyLib 1.0
-
-
 App {
-
-    id: app
-    property int battery     : BackendSingleton.battery
-    property int signalData  : BackendSingleton.signalStrength
-
 
 }
