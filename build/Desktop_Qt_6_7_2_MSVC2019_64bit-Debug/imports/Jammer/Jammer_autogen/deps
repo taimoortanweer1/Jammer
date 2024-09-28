@@ -1,9 +1,0 @@
-Jammer_autogen/timestamp: \
-	C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in \
-	C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp \
-	C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in \
-	C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in \
-	C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in \
-	D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/imports/Jammer/Jammerplugin_JammerPlugin_in.cpp \
-	D:/qt-workspace/Jammer/imports/Jammer/CMakeLists.txt \
-	C:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -14,17 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Build design studio components
-BUILD_QDS_COMPONENTS:BOOL=ON
-
-//Build Qt statically or dynamically
-BUILD_SHARED_LIBS:BOOL=ON
-
-BUILD_WITH_PCH:STRING=ON
-
-//Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=C:/Strawberry/c/bin/addr2line.exe
-
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/lib.exe
 
@@ -38,7 +27,7 @@ CMAKE_COLOR_DIAGNOSTICS:BOOL=1
 CMAKE_CXX_COMPILER:STRING=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/HostX64/x64/cl.exe
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /EHsc
+CMAKE_CXX_FLAGS:STRING=-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=/Zi /Ob0 /Od /RTC1
@@ -64,9 +53,6 @@ CMAKE_CXX_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.l
 CMAKE_C_COMPILER:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/HostX64/x64/cl.exe
 
 CMAKE_C_OUTPUT_EXTENSION:STRING=
-
-//Path to a program.
-CMAKE_DLLTOOL:FILEPATH=C:/Strawberry/c/bin/dlltool.exe
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=/machine:x64
@@ -129,9 +115,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/Qt/6.7.2/msvc2019_64
-
-CMAKE_INSTALL_RPATH:STRING=
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Jammer
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -174,15 +158,6 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 //Path to a program.
 CMAKE_MT:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.22621.0/x64/mt.exe
 
-//Path to a program.
-CMAKE_NM:FILEPATH=C:/Strawberry/c/bin/nm.exe
-
-//Path to a program.
-CMAKE_OBJCOPY:FILEPATH=C:/Strawberry/c/bin/objcopy.exe
-
-//Path to a program.
-CMAKE_OBJDUMP:FILEPATH=C:/Strawberry/c/bin/objdump.exe
-
 //No help, variable specified on the command line.
 CMAKE_PREFIX_PATH:PATH=C:/Qt/6.7.2/msvc2019_64
 
@@ -196,7 +171,22 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/.qtc/package-manager/auto-setup.cmake
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=JammerApp
+CMAKE_PROJECT_NAME:STATIC=Jammer
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=0.1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.22621.0/x64/rc.exe
@@ -215,9 +205,6 @@ CMAKE_RC_FLAGS_RELEASE:STRING=
 
 //Flags for Windows Resource Compiler during RELWITHDEBINFO builds.
 CMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=
-
-//Path to a program.
-CMAKE_READELF:FILEPATH=C:/Strawberry/c/bin/readelf.exe
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -266,109 +253,20 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//Path to a program.
-CMAKE_STRIP:FILEPATH=C:/Strawberry/c/bin/strip.exe
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Using pkg-config
-FEATURE_pkg_config:BOOL=OFF
-
-//Directory under which to collect all populated content
-FETCHCONTENT_BASE_DIR:PATH=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/_deps
-
-//Disables all attempts to download or update content and assumes
-// source dirs already exist
-FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
-
-//Enables QUIET option for all content population
-FETCHCONTENT_QUIET:BOOL=ON
-
-//When not empty, overrides where to find pre-populated content
-// for ds
-FETCHCONTENT_SOURCE_DIR_DS:PATH=
-
-//Enables UPDATE_DISCONNECTED behavior for all content population
-FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of ds
-FETCHCONTENT_UPDATES_DISCONNECTED_DS:BOOL=OFF
-
-//Git command line client
-GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
-
-//Arch-dependent data [PREFIX]
-INSTALL_ARCHDATADIR:STRING=.
-
-//Executables [PREFIX/bin]
-INSTALL_BINDIR:STRING=bin
-
-//Arch-independent data [PREFIX]
-INSTALL_DATADIR:STRING=.
-
-//Module description files directory
-INSTALL_DESCRIPTIONSDIR:STRING=./modules
-
-//Documentation [DATADIR/doc]
-INSTALL_DOCDIR:STRING=./doc
-
-//Examples [PREFIX/examples]
-INSTALL_EXAMPLESDIR:STRING=examples
-
-//Header files [PREFIX/include]
-INSTALL_INCLUDEDIR:STRING=include
-
-//Libraries [PREFIX/lib]
-INSTALL_LIBDIR:STRING=lib
-
-//Helper programs [ARCHDATADIR/bin on Windows, ARCHDATADIR/libexec
-// otherwise]
-INSTALL_LIBEXECDIR:STRING=./bin
-
-//Mkspecs files [PREFIX/mkspecs]
-INSTALL_MKSPECSDIR:STRING=mkspecs
-
-//Plugins [ARCHDATADIR/plugins]
-INSTALL_PLUGINSDIR:STRING=./plugins
-
-//QML imports [ARCHDATADIR/qml]
-INSTALL_QMLDIR:STRING=./qml
-
-//Settings used by Qt programs [PREFIX/etc/xdg]/[/Library/Preferences/Qt]
-INSTALL_SYSCONFDIR:STRING=etc/xdg
-
-//Tests [PREFIX/tests]
-INSTALL_TESTSDIR:STRING=tests
-
-//Translations [DATADIR/translations]
-INSTALL_TRANSLATIONSDIR:STRING=./translations
+//Value Computed by CMake
+Jammer_BINARY_DIR:STATIC=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug
 
 //Value Computed by CMake
-JammerApp_BINARY_DIR:STATIC=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug
+Jammer_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-JammerApp_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-JammerApp_SOURCE_DIR:STATIC=D:/qt-workspace/Jammer
-
-//Link Qt Insight Tracker library
-LINK_INSIGHT:BOOL=ON
-
-OPENSSL_ROOT_DIR:STRING=C:/openssl/include/..
-
-//Arguments to supply to pkg-config
-PKG_CONFIG_ARGN:STRING=
-
-//Disabled pkg-config usage.
-PKG_CONFIG_EXECUTABLE:STRING=
-
-//Import paths for Qt Creator's code model
-QML_IMPORT_PATH:STRING=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/qml
+Jammer_SOURCE_DIR:STATIC=D:/qt-workspace/Jammer
 
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
@@ -377,74 +275,11 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 //Additional directories where find(Qt6 ...) components are searched
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
-//Build Qt Benchmarks
-QT_BUILD_BENCHMARKS:BOOL=OFF
-
-//Build Qt examples
-QT_BUILD_EXAMPLES:BOOL=FALSE
-
-//Should examples be built as ExternalProjects.
-QT_BUILD_EXAMPLES_AS_EXTERNAL:BOOL=OFF
-
-//Should examples be built as part of the default 'all' target.
-QT_BUILD_EXAMPLES_BY_DEFAULT:BOOL=ON
-
-//Build Qt manual tests
-QT_BUILD_MANUAL_TESTS:BOOL=OFF
-
-//Build minimal subset of tests for Android multi-ABI Qt builds
-QT_BUILD_MINIMAL_ANDROID_MULTI_ABI_TESTS:BOOL=OFF
-
-//Build minimal subset of tests for static Qt builds
-QT_BUILD_MINIMAL_STATIC_TESTS:BOOL=OFF
-
-//Build the testing tree.
-QT_BUILD_TESTS:BOOL=OFF
-
-//Should all tests be batched into a single binary.
-QT_BUILD_TESTS_BATCHED:BOOL=OFF
-
-//Should tests be built as part of the default 'all' target.
-QT_BUILD_TESTS_BY_DEFAULT:BOOL=ON
-
-//Should tools be built as part of the default 'all' target.
-QT_BUILD_TOOLS_BY_DEFAULT:BOOL=ON
-
-QT_COPYRIGHT:STRING=Copyright (C) The Qt Company Ltd. and other contributors.
-
-//Enable the use of versioned hard link
-QT_CREATE_VERSIONED_HARD_LINK:BOOL=ON
-
 //Skip Qt Creator's package manager auto-setup
 QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP:BOOL=OFF
 
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:FILEPATH=C:/Qt/6.7.2/msvc2019_64/bin/qmake.exe
-
-QT_QPA_DEFAULT_PLATFORM:STRING=windows
-
-//A path to the source tree of the previously configured QtBase
-// project.
-QT_SOURCE_TREE:PATH=C:/Users/qt/work/qt/qtbase
-
-//Enable unity (jumbo) build
-QT_UNITY_BUILD:BOOL=OFF
-
-//Unity build batch size
-QT_UNITY_BUILD_BATCH_SIZE:STRING=32
-
-//Enable the use of ccache
-QT_USE_CCACHE:BOOL=OFF
-
-//Enable the use of vcpkg
-QT_USE_VCPKG:BOOL=OFF
-
-//Boolean indicating if doing a Qt prefix build (vs non-prefix
-// build).
-QT_WILL_INSTALL:BOOL=ON
-
-//The directory containing a CMake configuration file for Qt6BuildInternals.
-Qt6BuildInternals_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6BuildInternals
 
 //The directory containing a CMake configuration file for Qt6CoreTools.
 Qt6CoreTools_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6CoreTools
@@ -491,6 +326,9 @@ Qt6QuickTools_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6QuickTools
 //The directory containing a CMake configuration file for Qt6Quick.
 Qt6Quick_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Quick
 
+//The directory containing a CMake configuration file for Qt6SerialPort.
+Qt6SerialPort_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6SerialPort
+
 //The directory containing a CMake configuration file for Qt6ZlibPrivate.
 Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6ZlibPrivate
 
@@ -509,9 +347,6 @@ Vulkan_INCLUDE_DIR:PATH=Vulkan_INCLUDE_DIR-NOTFOUND
 //Path to a library.
 Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 
-//Build Qt with warnings as errors
-WARNINGS_ARE_ERRORS:BOOL=OFF
-
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.7.2/msvc2019_64/bin/windeployqt.exe
 
@@ -520,8 +355,6 @@ WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.7.2/msvc2019_64/bin/windeployqt.exe
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: CMAKE_ADDR2LINE
-CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
@@ -552,8 +385,6 @@ CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
 CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_DLLTOOL
-CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
 CMAKE_EDIT_COMMAND:INTERNAL=C:/Qt/Tools/CMake_64/bin/cmake-gui.exe
 //Executable file format
@@ -633,18 +464,10 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_NM
-CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
-//ADVANCED property for variable: CMAKE_OBJCOPY
-CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_OBJDUMP
-CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_RANLIB
-CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //noop for ranlib
 CMAKE_RANLIB:INTERNAL=:
 //ADVANCED property for variable: CMAKE_RC_COMPILER
@@ -660,8 +483,6 @@ CMAKE_RC_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_RC_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RC_FLAGS_RELWITHDEBINFO
 CMAKE_RC_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_READELF
-CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
 CMAKE_ROOT:INTERNAL=C:/Qt/Tools/CMake_64/share/cmake-3.29
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
@@ -688,22 +509,14 @@ CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_STRIP
-CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WrapAtomic
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
-//ADVANCED property for variable: GIT_EXECUTABLE
-GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test HAVE_STDATOMIC
 HAVE_STDATOMIC:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_ARGN
-PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //Qt feature: accessibility (from target Qt6::Gui)
 QT_FEATURE_accessibility:INTERNAL=ON
 //Qt feature: accessibility_atspi_bridge (from target Qt6::Gui)
@@ -1034,6 +847,8 @@ QT_FEATURE_networkproxy:INTERNAL=ON
 QT_FEATURE_no_direct_extern_access:INTERNAL=OFF
 //Qt feature: no_pkg_config (from target Qt6::Core)
 QT_FEATURE_no_pkg_config:INTERNAL=ON
+//Qt feature: ntddmodm (from target Qt6::SerialPort)
+QT_FEATURE_ntddmodm:INTERNAL=ON
 //Qt feature: ocsp (from target Qt6::Network)
 QT_FEATURE_ocsp:INTERNAL=ON
 //Qt feature: opengl (from target Qt6::Gui)
@@ -1403,10 +1218,6 @@ QT_FEATURE_xrender:INTERNAL=OFF
 QT_FEATURE_zstd:INTERNAL=OFF
 //Path to the wrapper of the tool commands
 QT_TOOL_COMMAND_WRAPPER_PATH:INTERNAL=D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/.qt/bin/qt_setup_tool_path.bat
-TEST_architecture_arch:INTERNAL=x86_64
-TEST_buildAbi:INTERNAL=x86_64-little_endian-lp64
-TEST_ld_version_script:INTERNAL=OFF
-TEST_subarch_result:INTERNAL=
 //ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
@@ -1416,6 +1227,6 @@ Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_LIBRARY
 Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/Qt/6.7.2/msvc2019_64
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Jammer
 __qt_qml_macros_module_base_dir:INTERNAL=C:/Qt/6.7.2/msvc2019_64/lib/cmake/Qt6Qml
 

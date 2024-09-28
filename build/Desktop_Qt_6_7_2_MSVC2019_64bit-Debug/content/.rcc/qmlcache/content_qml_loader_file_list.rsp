@@ -1,8 +1,0 @@
---resource
-D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/qmake_content.qrc
---resource
-D:/qt-workspace/Jammer/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/content/.qt/rcc/content_raw_qml_0.qrc
-/qt/qml/content/App.qml
-/qt/qml/content/Screen01.ui.qml
-/qt/qml/content/MyProgressBar.qml
-/qt/qml/content/SignalBar.qml
