@@ -5,33 +5,58 @@
 #include <QObject>
 #include <QQmlProperty>
 #include <QTimer>
+#include "src/SerialPort.h"
 
 class DataAcquisition : public QObject {
     Q_OBJECT
-    Q_PROPERTY(int sum         READ getSum     WRITE setSum     NOTIFY sumChanged)
-    Q_PROPERTY(int battery     READ getbattery WRITE setbattery NOTIFY batteryChanged)
+    Q_PROPERTY(int battery            READ getbattery        WRITE setbattery        NOTIFY batteryChanged)
+    Q_PROPERTY(int signalStrength     READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
+
 
 
 public:
-    explicit DataAcquisition(QObject *parent = nullptr);
+    static DataAcquisition* instance();
+
     int getbattery() const;
     void setbattery(int value);
-    int getSum() const;
-    void setSum(int value);
+    int getSignalStrength() const;
+    void setSignalStrength(int value);
 
 
 signals:
-    void sumChanged(int value);
+
     void batteryChanged(int value);
+    void signalStrengthChanged(int value);
 
 
-private slots:
-    void updateBattery();
+public slots:
+    void updateData();
+    void getPowerStatusUI(bool status, int paNumber);
+    void getAttenuationUI(int value);
+
+
 
 private:
-    int m_sum;
     int m_battery;
-    QTimer batteryTimer;
+    int m_signalStrength;
+    SerialPort *m_serial;
+
+    QTimer timerData;
+
+    DataAcquisition() {
+
+        m_serial = new SerialPort("COM1",9600);
+
+        QObject::connect(m_serial, &SerialPort::dataReceived, [this](const QByteArray &data) {
+            qDebug() << "Received data:" << data;
+        });
+        connect(&timerData, SIGNAL(timeout()),this, SLOT(updateData()));
+        timerData.start(50);
+    };
+    static DataAcquisition* m_instance;
+
+    char convertIntToChar(int num);
+    void convertIntToChars(int num, char &tens, char &ones);
 };
 
 

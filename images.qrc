@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/images/background.png</file>
+        <file>assets/images/Adjust.png</file>
+        <file>assets/images/EmptyBattery.png</file>
+        <file>assets/images/GreenCenter.png</file>
+        <file>assets/images/LiveVideoOn.png</file>
+        <file>assets/images/Map.png</file>
+        <file>assets/images/MenuVertical.png</file>
+        <file>assets/images/OptionFrame.png</file>
+        <file>assets/images/OptionsRows.png</file>
+        <file>assets/images/PhoneJammer.png</file>
+        <file>assets/images/Plot.png</file>
+        <file>assets/images/Power.png</file>
+        <file>assets/images/Signal.png</file>
+        <file>assets/images/YoutubeLive.png</file>
+    </qresource>
+</RCC>

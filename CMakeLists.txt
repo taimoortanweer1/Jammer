@@ -1,57 +1,62 @@
-cmake_minimum_required(VERSION 3.21.1)
+cmake_minimum_required(VERSION 3.16)
 
-option(LINK_INSIGHT "Link Qt Insight Tracker library" ON)
-option(BUILD_QDS_COMPONENTS "Build design studio components" ON)
+project(Jammer VERSION 0.1 LANGUAGES CXX)
 
-project(JammerApp LANGUAGES CXX)
-
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick SerialPort)
 
-find_package(Qt6 6.2 REQUIRED COMPONENTS Core Gui Qml Quick)
+qt_standard_project_setup(REQUIRES 6.5)
 
-if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
-    qt_standard_project_setup()
-endif()
+qt_add_executable(appJammer
+    main.cpp
+    images.qrc
 
-qt_add_executable(JammerApp src/main.cpp
-    src/DataAcquisition.h src/DataAcquisition.cpp)
-
-qt_add_resources(JammerApp "configuration"
-    PREFIX "/"
-    FILES
-        qtquickcontrols2.conf
 )
 
-target_link_libraries(JammerApp PRIVATE
-    Qt6::Core
-    Qt6::Gui
-    Qt6::Qml
-    Qt6::Quick
+qt_add_qml_module(appJammer
+    URI Jammer
+    VERSION 1.0
+    QML_FILES
+    Main.qml
+    components/Base.qml
+    components/MyProgressBar.qml
+    components/SignalBar.qml
+    components/VideoComponent.qml
+    components/PowAmpSettings.qml
+    components/ToggleButton.qml
+    components/TextCustom.qml
+    components/ScreenPowerAmpSettings.qml
+
+    SOURCES
+    src/SerialPort.h src/SerialPort.cpp
+    src/BackendSingleton.cpp src/BackendSingleton.h
+    src/DataAcquisition.cpp src/DataAcquisition.h
+
+
+
 )
 
-set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
-set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
-    CACHE STRING "Import paths for Qt Creator's code model"
-    FORCE
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+set_target_properties(appJammer PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appJammer
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
 )
 
-if (BUILD_QDS_COMPONENTS)
-    include(${CMAKE_CURRENT_SOURCE_DIR}/qmlcomponents)
-endif()
-
-include(${CMAKE_CURRENT_SOURCE_DIR}/qmlmodules)
-
-if (LINK_INSIGHT)
-    include(${CMAKE_CURRENT_SOURCE_DIR}/insight)
-endif ()
+target_link_libraries(appJammer
+    PRIVATE Qt6::Quick
+    Qt6::SerialPort
+)
 
 include(GNUInstallDirs)
-install(TARGETS JammerApp
+install(TARGETS appJammer
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-
-# make IDEs aware of the QML import path
-set(QML_IMPORT_PATH ${PROJECT_BINARY_DIR}/qml CACHE PATH
-    "Path to the custom QML components defined by the project")
