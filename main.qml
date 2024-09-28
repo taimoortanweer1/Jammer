@@ -1,5 +1,4 @@
 import QtQuick
-<<<<<<< HEAD
 import "components"
 import MyLib 1.0
 Window {
@@ -44,9 +43,5 @@ Window {
     }
 
 
-=======
-import content
-App {
->>>>>>> 726425c1f7cef8ded788841076a0407466ebf59c
 
 }
