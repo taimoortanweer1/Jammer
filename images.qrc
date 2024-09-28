@@ -14,5 +14,7 @@
         <file>assets/images/Power.png</file>
         <file>assets/images/Signal.png</file>
         <file>assets/images/YoutubeLive.png</file>
+        <file>assets/images/background2.png</file>
+        <file>components/ListMenu.qml</file>
     </qresource>
 </RCC>

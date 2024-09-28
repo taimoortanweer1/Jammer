@@ -28,6 +28,7 @@ qt_add_qml_module(appJammer
     components/ToggleButton.qml
     components/TextCustom.qml
     components/ScreenPowerAmpSettings.qml
+    components/ListMenu.qml
 
     SOURCES
     src/SerialPort.h src/SerialPort.cpp

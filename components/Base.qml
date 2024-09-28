@@ -10,7 +10,7 @@ Item {
 
         width: ite.width
         height: ite.height
-        source: "qrc:/assets/images/background.png"
+        source: "qrc:/assets/images/background2.png"
     }
 
     Item {

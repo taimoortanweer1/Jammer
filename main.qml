@@ -5,7 +5,6 @@ Window {
     width: 1280
     height: 800
     visible: true
-    title: qsTr("Hello World")
 
     Base {
         anchors.fill: parent
@@ -13,15 +12,24 @@ Window {
         myProgressBarPBarValue: DataAcquisition.battery
         mySignalBarValue: DataAcquisition.signalStrength
 
+        ListMenu {
 
-        ScreenPowerAmpSettings {
-            id: screenPowerAmp
-            x: 341
-            y: 189
-            onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
-                               DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
-                           }
+            id: listMenu
+            x: 8
+            y: 101
+            width: 98
+            height: 432
+
         }
+
+        // ScreenPowerAmpSettings {
+        //     id: screenPowerAmp
+        //     x: 341
+        //     y: 189
+        //     onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
+        //                        DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+        //                    }
+        // }
 
         /*
         VideoComponent {

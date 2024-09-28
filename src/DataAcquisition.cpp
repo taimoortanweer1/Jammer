@@ -88,6 +88,7 @@ void DataAcquisition::generateData(UIData data)
 
     bytes.push_back('_');
 
+    //for multiple digits
     if(data.attenuation>9)
     {
         char tens,ones;
