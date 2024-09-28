@@ -2,51 +2,57 @@
 
 SerialPort::SerialPort(const QString &portName, quint32 baudRate, QObject *parent) : QObject(parent)
 {
-    serial = new QSerialPort(this);
+    m_serial = new QSerialPort(this);
+    m_serial->setPortName(portName);
+    m_serial->setBaudRate(baudRate);
 
-    serial->setPortName(portName);
-    serial->setBaudRate(baudRate);
-    if (serial->open(QSerialPort::ReadWrite)) {
+    //trying to open serial port
+    if (m_serial->open(QSerialPort::ReadWrite)) {
         qDebug() << "Serial port opened";
     } else {
-        emit errorOccurred(serial->errorString());
+        emit errorOccurred(m_serial->errorString());
     }
 
-    connect(serial, &QSerialPort::readyRead, this, &SerialPort::readData);
+    connect(m_serial, &QSerialPort::readyRead, this, &SerialPort::readData);
 }
+
 
 SerialPort::~SerialPort()
 {
-    delete serial;
+    delete m_serial;
 }
+
 
 void SerialPort::openSerialPort(const QString &portName, quint32 baudRate)
 {
-    serial->setPortName(portName);
-    serial->setBaudRate(baudRate);
-    if (serial->open(QSerialPort::ReadWrite)) {
+    m_serial->setPortName(portName);
+    m_serial->setBaudRate(baudRate);
+    if (m_serial->open(QSerialPort::ReadWrite)) {
         qDebug() << "Serial port opened";
     } else {
-        emit errorOccurred(serial->errorString());
+        emit errorOccurred(m_serial->errorString());
     }
 }
 
+
 void SerialPort::closeSerialPort()
 {
-    serial->close();
+    m_serial->close();
 }
+
 
 void SerialPort::sendData(const QByteArray &data)
 {
-    if (serial->isOpen()) {
-        serial->write(data);
+    if (m_serial->isOpen()) {
+        m_serial->write(data);
     } else {
         emit errorOccurred("Serial port is not open");
     }
 }
 
+
 void SerialPort::readData()
 {
-    QByteArray data = serial->readAll();
+    QByteArray data = m_serial->readAll();
     emit dataReceived(data);
 }
