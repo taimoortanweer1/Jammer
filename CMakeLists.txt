@@ -33,6 +33,8 @@ qt_add_qml_module(appJammer
     src/SerialPort.h src/SerialPort.cpp
     src/BackendSingleton.cpp src/BackendSingleton.h
     src/DataAcquisition.cpp src/DataAcquisition.h
+    src/Utilities.h src/Utilities.cpp
+
 
 
 

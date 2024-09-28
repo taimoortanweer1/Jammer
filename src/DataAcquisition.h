@@ -6,6 +6,8 @@
 #include <QQmlProperty>
 #include <QTimer>
 #include "src/SerialPort.h"
+#include "src/Utilities.h"
+
 
 class DataAcquisition : public QObject {
     Q_OBJECT
@@ -69,8 +71,6 @@ private:
     };
     static DataAcquisition* m_instance;
 
-    char convertIntToChar(int num);
-    void convertIntToChars(int num, char &tens, char &ones);
     void generateData(UIData data);
 };
 

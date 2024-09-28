@@ -68,15 +68,6 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
     generateData(m_uiData);
 }
 
-char DataAcquisition::convertIntToChar(int num) {
-    return static_cast<char>(num + 48); // 48 is ASCII value of '0'
-}
-
-void DataAcquisition::convertIntToChars(int num, char &tens, char &ones) {
-
-    tens = (num / 10) + 48;
-    ones = (num % 10) + 48;
-}
 
 
 void DataAcquisition::generateData(UIData data)
@@ -87,7 +78,7 @@ void DataAcquisition::generateData(UIData data)
     bytes.push_back('_');
 
 
-    bytes.push_back(convertIntToChar(data.paNumber));
+    bytes.push_back(Utilities::convertIntToChar(data.paNumber));
 
     bytes.push_back('_');
     if(data.status)
@@ -100,13 +91,13 @@ void DataAcquisition::generateData(UIData data)
     if(data.attenuation>9)
     {
         char tens,ones;
-        convertIntToChars(data.attenuation, tens, ones);
+        Utilities::convertIntToChars(data.attenuation, tens, ones);
         bytes.push_back(tens);
         bytes.push_back(ones);
     }
     else
     {
-        bytes.push_back(convertIntToChar(data.attenuation));
+        bytes.push_back(Utilities::convertIntToChar(data.attenuation));
     }
 
 
