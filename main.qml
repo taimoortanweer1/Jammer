@@ -18,11 +18,9 @@ Window {
             id: screenPowerAmp
             x: 341
             y: 189
-
-            onDataChanged: (powerAmpStatus,powerAmpNumber) => {DataAcquisition.getPowerStatusUI(powerAmpStatus, powerAmpNumber)}
-           // onPowerAmpStatusChanged: {DataAcquisition.getPowerStatusUI(powerAmpStatus[powerAmpNumber], powerAmpNumber)}
-           // onPowerAmpAttenChanged:{DataAcquisition.getAttenuationUI(powerAmpAtten)}
-
+            onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
+                               DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+                           }
         }
 
         /*

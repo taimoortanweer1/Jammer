@@ -58,54 +58,57 @@ void DataAcquisition::updateData()
 
 }
 
+void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant param3)
+{
+    m_uiData.paNumber    = QVariant(param1).toInt();
+    m_uiData.status      = QVariant(param2).toBool();
+    m_uiData.attenuation = QVariant(param3).toInt();
+
+    qDebug() << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
+    generateData(m_uiData);
+}
+
 char DataAcquisition::convertIntToChar(int num) {
     return static_cast<char>(num + 48); // 48 is ASCII value of '0'
 }
 
 void DataAcquisition::convertIntToChars(int num, char &tens, char &ones) {
+
     tens = (num / 10) + 48;
     ones = (num % 10) + 48;
 }
 
-void DataAcquisition::getPowerStatusUI(bool status, int paNumber)
-{
-    qDebug() << " getPowerStatusUI " << status  << " paNumber " << paNumber;
 
+void DataAcquisition::generateData(UIData data)
+{
     QByteArray bytes;
     bytes.push_back('p');
     bytes.push_back('a');
     bytes.push_back('_');
-    bytes.push_back(convertIntToChar(paNumber));
+
+
+    bytes.push_back(convertIntToChar(data.paNumber));
+
     bytes.push_back('_');
-    if(status)
+    if(data.status)
         bytes.push_back('1');
     else
         bytes.push_back('0');
+
     bytes.push_back('_');
 
-    int number = 18;
-    if(number>9)
+    if(data.attenuation>9)
     {
         char tens,ones;
-        convertIntToChars(number, tens, ones);
+        convertIntToChars(data.attenuation, tens, ones);
         bytes.push_back(tens);
         bytes.push_back(ones);
-
     }
     else
     {
-        bytes.push_back(convertIntToChar(number));
+        bytes.push_back(convertIntToChar(data.attenuation));
     }
 
 
-
     m_serial->sendData(bytes);
-
-}
-
-void DataAcquisition::getAttenuationUI(int value)
-{
-    qDebug() << " getAttenuationUI " << value;
-    qDebug();
-
 }

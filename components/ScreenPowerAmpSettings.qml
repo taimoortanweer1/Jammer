@@ -5,11 +5,10 @@ Item {
     height: 507
     width: 817
 
-    property int  powerAmpStatus: 0
+    property bool  powerAmpStatus: false
     property int  powerAmpNumber: 0
     property int  powerAmpAtten: 0
-    property int  attenuation: 0
-    signal dataChanged(status: bool, paNumber: int)
+    signal dataChanged(paNumber: int, status: bool, attentuation: int)
 
     Grid
     {
@@ -22,10 +21,21 @@ Item {
             model: 7;
             delegate: PowAmpSettings
             {
-                titleText: "CH # "+ index
+                titleText: "CH # "+ Number(index+1)
                 paNumber: index
-                onPowerStatusChanged: { powerAmpStatus = powerStatus; root.dataChanged(powerStatus,index) }
-                onAttenuationChanged: { powerAmpAtten  = attenuation; }
+                onPowerStatusChanged: {
+
+                    powerAmpNumber = index;
+                    powerAmpStatus = powerStatus;
+                    powerAmpAtten = attenuation
+                    root.dataChanged(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+                }
+                onAttenuationChanged: {
+                    powerAmpNumber = index;
+                    powerAmpStatus = powerStatus;
+                    powerAmpAtten = attenuation
+                    root.dataChanged(index,powerStatus,attenuation)
+                }
             }
         }
 

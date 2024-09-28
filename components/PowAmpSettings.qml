@@ -4,8 +4,8 @@ import QtQuick.Controls
 Item {
 
     property bool powerStatus:false
-    property int  attenuation: 10
-    property int  paNumber: 1
+    property int  attenuation: spinbox.value
+    property int  paNumber: 0
     property alias titleText: text1.text
     width: 200
     height: 250
@@ -60,9 +60,10 @@ Item {
                     text: "PIN"
                 }
 
-                TextCustom {
-                    id: textCustom
-                    text: "12"
+                SpinBox {
+                    id: spinbox
+                    width: 50
+                    value: 12
 
                 }
 

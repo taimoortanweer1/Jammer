@@ -15,6 +15,21 @@ class DataAcquisition : public QObject {
 
 
 public:
+
+
+    struct UIData
+    {
+        int paNumber;
+        bool status;
+        int attenuation;
+        UIData() {
+
+            paNumber = 0;
+            status = false;
+            attenuation = 0;
+        }
+
+    };
     static DataAcquisition* instance();
 
     int getbattery() const;
@@ -31,16 +46,15 @@ signals:
 
 public slots:
     void updateData();
-    void getPowerStatusUI(bool status, int paNumber);
-    void getAttenuationUI(int value);
+    void getUIUpdate(QVariant param1, QVariant param2, QVariant param3);
 
 
 
 private:
     int m_battery;
     int m_signalStrength;
+    UIData m_uiData;
     SerialPort *m_serial;
-
     QTimer timerData;
 
     DataAcquisition() {
@@ -57,6 +71,7 @@ private:
 
     char convertIntToChar(int num);
     void convertIntToChars(int num, char &tens, char &ones);
+    void generateData(UIData data);
 };
 
 
