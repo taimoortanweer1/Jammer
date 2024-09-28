@@ -5,12 +5,26 @@ Item {
     id: ite
     property alias myProgressBarPBarValue: myProgressBar.pBarValue
     property alias mySignalBarValue: signalBar.signalBarValue
+    property alias screenIndex: listMenu.screenIndex
 
     Image {
 
         width: ite.width
         height: ite.height
         source: "qrc:/assets/images/background2.png"
+    }
+
+    ListMenu {
+
+        id: listMenu
+        width: 70
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.leftMargin: 15
+        anchors.topMargin: 32
+        anchors.bottomMargin: 120
+
     }
 
     Item {

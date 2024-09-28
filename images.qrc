@@ -16,5 +16,7 @@
         <file>assets/images/YoutubeLive.png</file>
         <file>assets/images/background2.png</file>
         <file>components/ListMenu.qml</file>
+        <file>assets/images/background3.png</file>
+        <file>components/ButtonCustom.qml</file>
     </qresource>
 </RCC>

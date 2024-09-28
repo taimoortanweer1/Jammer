@@ -3,52 +3,99 @@ import QtQuick.Controls 2.15
 
 Item {
     id: root
-    width: 100
-    height: 400
+    width: 50
+    height: 700
     y: 100
-    property int yoffset: 400
     property int duration: 400
+    property int screenIndex: 0
 
     Column {
         id: column
         width: parent.width-4
         height: parent.height-4
-        spacing: 5
+        spacing: 7
         anchors.centerIn: parent
 
-        Rectangle {
-            id: rectangle1
+
+
+        ButtonCustom {
+
+            id: buttonMenu
             width:   parent.width - 10
             height:  parent.width - 10
-            color: "#ff0000"
+            imgSource: "qrc:/assets/images/MenuVertical.png"
+            onClicked: {
 
-            MouseArea
-            {
-                anchors.fill: parent
-                onClicked: {
-
-                    if (rectangle.anchors.topMargin === rectangle1.width) {
-                        animDown.start()
-                    } else {
-                        animUp.start()
-                    }
+                if (rectangle.anchors.topMargin === buttonMenu.width) {
+                    animDown.start()
+                } else {
+                    animUp.start()
                 }
             }
         }
 
 
-        Rectangle {
-            id: rectangle2
+        ButtonCustom {
+
+            id: buttonMenu2
             width:   parent.width - 10
             height:  parent.width - 10
-            color: "#00ff00"
+            imgSource: "qrc:/assets/images/Power.png"
+
+            onClicked: {
+
+              screenIndex = 0
+            }
+
         }
 
-        Rectangle {
-            id: rectangle3
+
+
+        ButtonCustom {
+
+            id: buttonMenu3
             width:   parent.width - 10
             height:  parent.width - 10
-            color: "#0000ff"
+            imgSource: "qrc:/assets/images/Adjust.png"
+
+
+            onClicked: {
+
+              screenIndex = 1
+            }
+
+        }
+
+        ButtonCustom {
+
+            id: buttonMenu4
+            width:   parent.width - 10
+            height:  parent.width - 10
+            imgSource: "qrc:/assets/images/LiveVideoOn.png"
+
+
+            onClicked: {
+
+              screenIndex = 2
+            }
+
+        }
+
+
+
+        ButtonCustom {
+
+            id: buttonMenu5
+            width:   parent.width - 10
+            height:  parent.width - 10
+            imgSource: "qrc:/assets/images/Map.png"
+
+
+            onClicked: {
+
+              screenIndex = 3
+            }
+
         }
 
 
@@ -59,8 +106,8 @@ Item {
           target: rectangle
           property: "anchors.topMargin"
           duration: 400
-          from: rectangle1.width
-          to: 300
+          from: buttonMenu.width
+          to: 600
           easing.type: Easing.InOutSine
       }
 
@@ -69,8 +116,8 @@ Item {
           target: rectangle
           property: "anchors.topMargin"
           duration: 400
-          from: 300
-          to: rectangle1.width
+          from: 600
+          to: buttonMenu.width
           easing.type: Easing.InOutSine
     }
 
@@ -78,7 +125,7 @@ Item {
           id: rectangle
           color: "black"
           anchors.fill: parent
-          anchors.topMargin: rectangle1.width
+          anchors.topMargin: buttonMenu.width
       }
 
 }
