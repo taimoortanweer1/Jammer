@@ -2,6 +2,11 @@
 #define UTILITIES_H
 
 #include <QObject>
+#include <QMap>
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <string>
 
 class Utilities : public QObject
 {
@@ -23,6 +28,22 @@ public:
      * @param ones
      */
     static void convertIntToChars(int num, char &tens, char &ones);
+
+    /**
+     * @brief asciiToInt
+     * @param data
+     * @return
+     */
+    static std::vector<int> asciiToInt(const QByteArray& data);
+
+
+    /**
+     * @brief parseAsciiData
+     * @param data
+     * @return
+     */
+    static QMap<QString, std::vector<int>> parseAsciiData(const QByteArray& data);
+
 
 signals:
 };

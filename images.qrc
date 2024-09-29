@@ -18,5 +18,6 @@
         <file>components/ListMenu.qml</file>
         <file>assets/images/background3.png</file>
         <file>components/ButtonCustom.qml</file>
+        <file>components/ScreenSplash.qml</file>
     </qresource>
 </RCC>

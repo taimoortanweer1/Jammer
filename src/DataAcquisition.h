@@ -115,6 +115,7 @@ private:
 
         QObject::connect(m_serial, &SerialPort::dataReceived, [this](const QByteArray &data) {
             qDebug() << "Received data:" << data;
+            extractData(data);
         });
         connect(&m_timerData, SIGNAL(timeout()),this, SLOT(updateDataSimulator()));
         m_timerData.start(50);
@@ -130,6 +131,8 @@ private:
      * @param data
      */
     void generateData(UIData data);
+    void extractData(QByteArray data);
+
 };
 
 

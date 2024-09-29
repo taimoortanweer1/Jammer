@@ -104,3 +104,10 @@ void DataAcquisition::generateData(UIData data)
 
     m_serial->sendData(bytes);
 }
+
+void DataAcquisition::extractData(QByteArray data)
+{
+
+    QMap<QString, std::vector<int>> parsedData = Utilities::parseAsciiData(data);
+
+}

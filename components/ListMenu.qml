@@ -6,7 +6,7 @@ Item {
     width: 50
     height: 700
     y: 100
-    property int duration: 400
+    property int duration: 200
     property int screenIndex: 0
 
     Column {
@@ -105,7 +105,7 @@ Item {
           id: animDown
           target: rectangle
           property: "anchors.topMargin"
-          duration: 400
+          duration: root.duration
           from: buttonMenu.width
           to: 600
           easing.type: Easing.InOutSine
@@ -115,7 +115,7 @@ Item {
           id: animUp
           target: rectangle
           property: "anchors.topMargin"
-          duration: 400
+          duration: root.duration
           from: 600
           to: buttonMenu.width
           easing.type: Easing.InOutSine
