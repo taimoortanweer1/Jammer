@@ -7,6 +7,21 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include <QDebug>
+#define MCP9701_OFFSET_V                0.5
+#define MCP9701_SENSITIVITY             0.01
+#define BASE_ZERO_CURRENT_VOLTAGE       2.5 // Zero current output voltage at 25°C
+#define SENSITIVITY                     0.066 // Sensitivity in V/A (for 66 mV/A model)
+#define TEMP_SLOPE                      -0.00026 // Zero-current voltage slope in V/°C
+#define MAX_BUFFER_SIZE                 1024
+#define MAX_VALUES                      7
+
+
+struct PhaseData {
+    int current;
+    int temperature;
+    bool alarm;
+};
 
 class Utilities : public QObject
 {
@@ -29,23 +44,13 @@ public:
      */
     static void convertIntToChars(int num, char &tens, char &ones);
 
-    /**
-     * @brief asciiToInt
-     * @param data
-     * @return
-     */
-    static std::vector<int> asciiToInt(const QByteArray& data);
+    static QVector<PhaseData> parsePhaseData(const QByteArray &bytes);
 
-
-    /**
-     * @brief parseAsciiData
-     * @param data
-     * @return
-     */
-    static QMap<QString, std::vector<int>> parseAsciiData(const QByteArray& data);
-
-
+    static void extract_and_print_values(const char *buffer);
 signals:
+private:
+
+
 };
 
 #endif // UTILITIES_H

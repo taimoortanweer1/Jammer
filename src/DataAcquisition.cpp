@@ -108,6 +108,7 @@ void DataAcquisition::generateData(UIData data)
 void DataAcquisition::extractData(QByteArray data)
 {
 
-    QMap<QString, std::vector<int>> parsedData = Utilities::parseAsciiData(data);
+     Utilities::extract_and_print_values(data.begin());
+//    QMap<QString, std::vector<int>> parsedData = Utilities::parseAsciiData(data);
 
 }
