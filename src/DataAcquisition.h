@@ -12,8 +12,9 @@
 
 class DataAcquisition : public QObject {
     Q_OBJECT
-    Q_PROPERTY(int battery            READ getbattery        WRITE setbattery        NOTIFY batteryChanged)
-    Q_PROPERTY(int signalStrength     READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
+    Q_PROPERTY(int battery                READ getbattery        WRITE setbattery        NOTIFY batteryChanged)
+    Q_PROPERTY(int signalStrength         READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
+    Q_PROPERTY(QVariantList  currentData  READ getCurrentData                            NOTIFY currentDataChanged)
 
 
 
@@ -67,6 +68,12 @@ public:
      */
     void setSignalStrength(int value);
 
+    /**
+     * @brief currentData
+     * @return
+     */
+    QVariantList getCurrentData() const;
+
 
 signals:
 
@@ -81,6 +88,11 @@ signals:
      * @param value
      */
     void signalStrengthChanged(int value);
+
+    /**
+     * @brief dataListChanged
+     */
+    void currentDataChanged();
 
 
 public slots:
@@ -108,6 +120,8 @@ private:
     int             m_battery;
     int             m_signalStrength;
     UIData          m_uiData;
+    QVariantList    m_currentData;
+
 
     //Backend Logic Data
     SerialPort      *m_serial;

@@ -3,13 +3,18 @@ import QtQuick.Controls
 
 Item {
 
-    property bool powerStatus:false
-    property int  attenuation: spinboxAttenuation.value
-    property int  paNumber: 0
-    property alias titleText: text1.text
+    //transmitted from ui to controller
+    property bool   powerStatus:false
+    property int    attenuation: spinboxAttenuation.value
+
+    //received from controller to ui
+    property alias  title: textTitle.text
     property string temperature: textTemperature.text
     property string current: textCurrent.text
-    property bool vswr: textVSWR.text
+    property int   vswr: textVSWR.text
+
+    //local use
+    property int    paNumber: 0
 
     width: 200
     height: 250
@@ -31,6 +36,7 @@ Item {
             fillMode: Image.Stretch
 
             Text {
+                id:textTitle
                 width: 51
                 height: 30
                 color: "#00C310"

@@ -68,6 +68,11 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
     generateData(m_uiData);
 }
 
+QVariantList DataAcquisition::getCurrentData() const
+{
+    return m_currentData;
+}
+
 
 
 void DataAcquisition::generateData(UIData data)
@@ -120,6 +125,8 @@ void DataAcquisition::extractData(QByteArray data, int dataIndex)
 
 
 void  DataAcquisition::extractSensorData(const char* buffer) {
+
+    m_currentData.clear();
 
     int pa_currents[MAX_VALUES];
     int pa_temps[MAX_VALUES];
@@ -186,8 +193,10 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
     {
 
         qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
+        m_currentData.push_back(pa_currents_a[i]);
     }
 
+    emit currentDataChanged();
 
 }
 

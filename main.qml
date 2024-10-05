@@ -13,7 +13,14 @@ Window {
 
         myProgressBarPBarValue: DataAcquisition.battery
         mySignalBarValue: DataAcquisition.signalStrength
+        property var currendDataListm: DataAcquisition.currentData
 
+        onCurrendDataListmChanged: {
+
+
+           console.log("dddd ", currendDataListm)
+
+        }
         onScreenIndexChanged:
         {
             layout.currentIndex= base.screenIndex
@@ -33,9 +40,14 @@ Window {
                 id: screenPowerAmp
                 x: 341
                 y: 189
+                currentData1: DataAcquisition.currentList
                 onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
                                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
                                }
+
+
+
+
             }
 
 

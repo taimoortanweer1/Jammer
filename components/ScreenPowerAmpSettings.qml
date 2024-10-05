@@ -10,20 +10,26 @@ Item {
     property int    powerAmpAtten : 0
     signal          dataChanged(paNumber: int, status: bool, attentuation: int)
 
+    property var    currentData1
+
     Grid
     {
         anchors.fill: parent
         spacing: 5
         rows: 2
         columns: 4
-
         Repeater {
             model: 7
             delegate: PowAmpSettings
             {
 
-                titleText: "CH # "+ Number(index+1)
+                temperature: "23"
+                current:"currentData"
+                vswr:1
+
+
                 paNumber: index
+                title: "CH # "+ Number(index+1)
                 onPowerStatusChanged: {
 
                     powerAmpNumber = index;
