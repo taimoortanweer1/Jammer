@@ -44,9 +44,12 @@ public:
      */
     static void convertIntToChars(int num, char &tens, char &ones);
 
-    static QVector<PhaseData> parsePhaseData(const QByteArray &bytes);
+    /**
+     * @brief extractSensorData
+     * @param buffer
+     */
+    static void extractSensorData(const char *buffer);
 
-    static void extract_and_print_values(const char *buffer);
 signals:
 private:
 

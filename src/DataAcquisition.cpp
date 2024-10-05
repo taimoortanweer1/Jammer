@@ -105,10 +105,90 @@ void DataAcquisition::generateData(UIData data)
     m_serial->sendData(bytes);
 }
 
-void DataAcquisition::extractData(QByteArray data)
+void DataAcquisition::extractData(QByteArray data, int dataIndex)
 {
 
-     Utilities::extract_and_print_values(data.begin());
-//    QMap<QString, std::vector<int>> parsedData = Utilities::parseAsciiData(data);
+    switch (dataIndex) {
+    case SENSOR_DATA:
+            extractSensorData(data.begin());
+        break;
+    default:
+        break;
+    }
 
 }
+
+
+void  DataAcquisition::extractSensorData(const char* buffer) {
+
+    int pa_currents[MAX_VALUES];
+    int pa_temps[MAX_VALUES];
+    int pa_alarm[MAX_VALUES];
+
+    float pa_currents_v[MAX_VALUES];
+    float pa_temps_v[MAX_VALUES];
+    float pa_alarm_v[MAX_VALUES];
+
+    float pa_temps_c[MAX_VALUES];
+    float pa_currents_a[MAX_VALUES];
+    // Extract PA_Temps
+
+
+    const char* start = strstr(buffer, "PA_Temps =[");
+    if (start != NULL) {
+        start += strlen("PA_Temps =[");
+        for (int i = 0; i < MAX_VALUES; i++) {
+            pa_temps[i] = atoi(start);
+            pa_temps_v[i] = (pa_temps[i] / 1023.0) * 5.0;
+            // pa_temps_c[i] = (pa_temps_v[i] - 0.5) * 100;
+            pa_temps_c[i] = (pa_temps_v[i] - MCP9701_OFFSET_V) / MCP9701_SENSITIVITY;
+            start = strchr(start, '_');
+            if (start != NULL) start++;
+        }
+    }
+
+    // Extract PA_Currents
+    start = strstr(buffer, "PA_Currents =[");
+    if (start != NULL) {
+        start += strlen("PA_Currents =[");
+        for (int i = 0; i < MAX_VALUES; i++) {
+            pa_currents[i] = atoi(start);
+            pa_currents_v[i] = (pa_currents[i] / 1023.0) * 5.0; // Calculate voltage
+
+
+            float temp = pa_temps_c[i]; // Assuming you've already converted temperature to °C
+            float zero_current_voltage = BASE_ZERO_CURRENT_VOLTAGE + (temp - 25) * TEMP_SLOPE;
+
+
+
+            pa_currents_a[i] = (pa_currents_v[i] - zero_current_voltage) / SENSITIVITY;
+            start = strchr(start, '_');
+            if (start != NULL) start++;
+        }
+    }
+
+
+    // Extract PA_ALARM
+    start = strstr(buffer, "PA_ALARM =[");
+    if (start != NULL) {
+        start += strlen("PA_ALARM =[");
+        for (int i = 0; i < MAX_VALUES; i++) {
+            pa_alarm[i] = atoi(start);
+            //pa_alarm_v[i] = (pa_alarm[i] / 1.0) * 5.0;
+            start = strchr(start, '_');
+            if (start != NULL) start++;
+        }
+    }
+
+    qDebug() << " Temp " << " Current " << " Alarm ";
+
+    for(int i = 0 ; i < 7 ; i++)
+    {
+
+        qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
+    }
+
+
+}
+
+

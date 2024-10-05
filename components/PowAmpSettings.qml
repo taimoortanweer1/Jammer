@@ -4,9 +4,13 @@ import QtQuick.Controls
 Item {
 
     property bool powerStatus:false
-    property int  attenuation: spinbox.value
+    property int  attenuation: spinboxAttenuation.value
     property int  paNumber: 0
     property alias titleText: text1.text
+    property string temperature: textTemperature.text
+    property string current: textCurrent.text
+    property bool vswr: textVSWR.text
+
     width: 200
     height: 250
 
@@ -27,7 +31,6 @@ Item {
             fillMode: Image.Stretch
 
             Text {
-                id: text1
                 width: 51
                 height: 30
                 color: "#00C310"
@@ -57,11 +60,11 @@ Item {
 
                 TextCustom {
 
-                    text: "PIN"
+                    text: "ATTEN"
                 }
 
                 SpinBox {
-                    id: spinbox
+                    id: spinboxAttenuation
                     width: 50
                     value: 12
 
@@ -73,23 +76,6 @@ Item {
 
                 }
 
-                TextCustom {
-                    id: textCustom2
-                    text: "POUT"
-
-                }
-
-                TextCustom {
-                    id: textCustom3
-                    text: "2.3"
-
-                }
-
-                TextCustom {
-                    id: textCustom4
-                    text: "dbM"
-
-                }
 
                 TextCustom {
                     id: textCustom5
@@ -98,7 +84,7 @@ Item {
                 }
 
                 TextCustom {
-                    id: textCustom6
+                    id: textTemperature
                     text: "34"
 
                 }
@@ -116,8 +102,8 @@ Item {
                 }
 
                 TextCustom {
-                    id: textCustom9
-                    text: "10"
+                    id: textVSWR
+                    text: "1"
 
                 }
 
@@ -127,7 +113,7 @@ Item {
                 }
 
                 TextCustom {
-                    id: textCustom11
+                    id: textCurrent
                     text: "DC-A"
 
                 }

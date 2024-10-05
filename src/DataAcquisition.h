@@ -8,6 +8,7 @@
 #include "src/SerialPort.h"
 #include "src/Utilities.h"
 
+#define SENSOR_DATA         0
 
 class DataAcquisition : public QObject {
     Q_OBJECT
@@ -103,19 +104,23 @@ public slots:
 
 private:
 
+    //User Display Data
     int             m_battery;
     int             m_signalStrength;
     UIData          m_uiData;
+
+    //Backend Logic Data
     SerialPort      *m_serial;
     QTimer          m_timerData;
+    int             m_dataType;
 
     DataAcquisition() {
 
         m_serial = new SerialPort("COM1",9600);
-
+        m_dataType = 0;
         QObject::connect(m_serial, &SerialPort::dataReceived, [this](const QByteArray &data) {
             qDebug() << "Received data:" << data;
-            extractData(data);
+            extractData(data, SENSOR_DATA);
         });
         connect(&m_timerData, SIGNAL(timeout()),this, SLOT(updateDataSimulator()));
         m_timerData.start(50);
@@ -131,8 +136,8 @@ private:
      * @param data
      */
     void generateData(UIData data);
-    void extractData(QByteArray data);
-
+    void extractData(QByteArray data, int dataIndex);
+    void extractSensorData(const char *buffer);
 };
 
 

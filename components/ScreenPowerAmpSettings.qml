@@ -5,10 +5,10 @@ Item {
     height: 507
     width: 817
 
-    property bool  powerAmpStatus: false
-    property int  powerAmpNumber: 0
-    property int  powerAmpAtten: 0
-    signal dataChanged(paNumber: int, status: bool, attentuation: int)
+    property bool   powerAmpStatus: false
+    property int    powerAmpNumber: 0
+    property int    powerAmpAtten : 0
+    signal          dataChanged(paNumber: int, status: bool, attentuation: int)
 
     Grid
     {
@@ -18,9 +18,10 @@ Item {
         columns: 4
 
         Repeater {
-            model: 7;
+            model: 7
             delegate: PowAmpSettings
             {
+
                 titleText: "CH # "+ Number(index+1)
                 paNumber: index
                 onPowerStatusChanged: {
