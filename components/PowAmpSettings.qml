@@ -9,9 +9,9 @@ Item {
 
     //received from controller to ui
     property alias  title: textTitle.text
-    property string temperature: textTemperature.text
-    property string current: textCurrent.text
-    property int   vswr: textVSWR.text
+    property alias  temperature: textTemperature.text
+    property alias  current: textCurrent.text
+    property alias  vswr: textVSWR.text
 
     //local use
     property int    paNumber: 0
@@ -119,13 +119,13 @@ Item {
                 }
 
                 TextCustom {
-                    id: textCurrent
+                    id: textCustom11
                     text: "DC-A"
 
                 }
 
                 TextCustom {
-                    id: textCustom12
+                    id: textCurrent
                     text: "1.2"
 
                 }

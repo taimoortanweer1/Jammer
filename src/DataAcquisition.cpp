@@ -70,7 +70,7 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
 
 QVariantList DataAcquisition::getCurrentData() const
 {
-    return m_currentData;
+    return m_sensorData;
 }
 
 
@@ -126,7 +126,7 @@ void DataAcquisition::extractData(QByteArray data, int dataIndex)
 
 void  DataAcquisition::extractSensorData(const char* buffer) {
 
-    m_currentData.clear();
+    m_sensorData.clear();
 
     int pa_currents[MAX_VALUES];
     int pa_temps[MAX_VALUES];
@@ -169,6 +169,10 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
 
 
             pa_currents_a[i] = (pa_currents_v[i] - zero_current_voltage) / SENSITIVITY;
+
+            // uint32_t value = static_cast<uint32_t>(pa_currents_a[i] * 1000.0);
+            // pa_currents_a[i] = static_cast<float>(value) / 1000.0;
+
             start = strchr(start, '_');
             if (start != NULL) start++;
         }
@@ -187,13 +191,20 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
         }
     }
 
-    qDebug() << " Temp " << " Current " << " Alarm ";
+   // qDebug() << " Temp " << " Current " << " Alarm ";
 
     for(int i = 0 ; i < 7 ; i++)
     {
 
-        qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
-        m_currentData.push_back(pa_currents_a[i]);
+        //qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
+        QString cur   = QString("%1").arg(pa_currents_a[i], 0, 'f', 3);
+        QString temp  = QString("%1").arg(pa_temps_c[i], 0, 'f', 3);
+        QString alarm  = QString("%1").arg(pa_alarm[i], 0, 'f', 3);
+
+        m_sensorData.push_back(cur);
+        m_sensorData.push_back(temp);
+        m_sensorData.push_back(alarm);
+
     }
 
     emit currentDataChanged();

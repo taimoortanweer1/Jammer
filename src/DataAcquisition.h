@@ -120,7 +120,7 @@ private:
     int             m_battery;
     int             m_signalStrength;
     UIData          m_uiData;
-    QVariantList    m_currentData;
+    QVariantList    m_sensorData;
 
 
     //Backend Logic Data
