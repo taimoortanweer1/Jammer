@@ -29,6 +29,8 @@ Window {
             height: 507
 
 
+            Item {}
+
             ScreenPowerAmpSettings {
                 id: screenPowerAmp
                 x: 341
@@ -38,7 +40,6 @@ Window {
                                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
                                }
             }
-
 
             VideoComponent {
                 id: videoScreen
@@ -53,6 +54,7 @@ Window {
                 // anchors.bottomMargin: 55
 
             }
+
 
 
 
