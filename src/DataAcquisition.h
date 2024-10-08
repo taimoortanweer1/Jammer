@@ -12,6 +12,8 @@
 
 class DataAcquisition : public QObject {
     Q_OBJECT
+
+    //data to be exposed to qml
     Q_PROPERTY(int battery                READ getbattery        WRITE setbattery        NOTIFY batteryChanged)
     Q_PROPERTY(int signalStrength         READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
     Q_PROPERTY(QVariantList  currentData  READ getCurrentData                            NOTIFY currentDataChanged)
@@ -128,6 +130,8 @@ private:
     QTimer          m_timerData;
     int             m_dataType;
 
+
+    //constructor with initializations
     DataAcquisition() {
 
         m_serial = new SerialPort("COM1",9600);
@@ -150,7 +154,18 @@ private:
      * @param data
      */
     void generateData(UIData data);
+
+    /**
+     * @brief extractData: main function for data extraction, index represents type of data
+     * @param data
+     * @param dataIndex
+     */
     void extractData(QByteArray data, int dataIndex);
+
+    /**
+     * @brief extractSensorData, data parsing function for sensor data
+     * @param buffer
+     */
     void extractSensorData(const char *buffer);
 };
 

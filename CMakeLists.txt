@@ -5,7 +5,7 @@ project(Jammer VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick SerialPort)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Charts SerialPort)
 
 qt_standard_project_setup(REQUIRES 6.5)
 

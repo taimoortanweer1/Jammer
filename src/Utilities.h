@@ -17,11 +17,6 @@
 #define MAX_VALUES                      7
 
 
-struct PhaseData {
-    int current;
-    int temperature;
-    bool alarm;
-};
 
 class Utilities : public QObject
 {

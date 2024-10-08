@@ -6,6 +6,7 @@ Item {
 
     property bool playVideo: false
 
+
     Rectangle {
         id : cameraUI
 

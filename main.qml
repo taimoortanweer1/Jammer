@@ -11,15 +11,20 @@ Window {
         id: base
         anchors.fill: parent
 
+        //battery data from sesnosr : exposed from c++
         myProgressBarPBarValue: DataAcquisition.battery
+
+        //battery data from sesnosr : exposed from c++
         mySignalBarValue: DataAcquisition.signalStrength
 
+        //when left panel button is switched to another view
         onScreenIndexChanged:
         {
             layout.currentIndex= base.screenIndex
 
         }
 
+        //stacks of screen items inside
         StackLayout {
 
             id: layout
@@ -29,45 +34,33 @@ Window {
             height: 507
 
 
+            //temp layer for ScreenSplash
             Item {}
 
+
+            //screen with Powre Amplifier settings
             ScreenPowerAmpSettings {
                 id: screenPowerAmp
                 x: 341
                 y: 189
+                //PA data from controller
                 currentDataLocal: DataAcquisition.currentData
+
+                //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
                 onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
                                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
                                }
             }
 
+            //screen with video layout
             VideoComponent {
                 id: videoScreen
                 playVideo: true
-                // anchors.left: parent.left
-                // anchors.right: parent.right
-                // anchors.top: parent.top
-                // anchors.bottom: parent.bottom
-                // anchors.leftMargin: 259
-                // anchors.rightMargin: 5
-                // anchors.topMargin: 75
-                // anchors.bottomMargin: 55
 
             }
 
-
-
-
         }
 
-
-
-
-
-
-
     }
-
-
 
 }

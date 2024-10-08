@@ -4,6 +4,7 @@ DataAcquisition* DataAcquisition::m_instance = nullptr;
 
 DataAcquisition* DataAcquisition::instance()
 {
+    //if instance already created it wont create another one
     if (!m_instance) {
         m_instance = new DataAcquisition();
     }
@@ -65,6 +66,7 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
     m_uiData.attenuation = QVariant(param3).toInt();
 
     qDebug() << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
+
     generateData(m_uiData);
 }
 
@@ -77,15 +79,18 @@ QVariantList DataAcquisition::getCurrentData() const
 
 void DataAcquisition::generateData(UIData data)
 {
+    //data from ui is converted to bytearray for sending to senosr controller
     QByteArray bytes;
     bytes.push_back('p');
     bytes.push_back('a');
     bytes.push_back('_');
 
-
+    //convert int to ascii
     bytes.push_back(Utilities::convertIntToChar(data.paNumber));
 
     bytes.push_back('_');
+
+    //power selection status of PA
     if(data.status)
         bytes.push_back('1');
     else
@@ -93,7 +98,7 @@ void DataAcquisition::generateData(UIData data)
 
     bytes.push_back('_');
 
-    //for multiple digits
+    //for multiple digits: this block needs improvement
     if(data.attenuation>9)
     {
         char tens,ones;
@@ -103,16 +108,19 @@ void DataAcquisition::generateData(UIData data)
     }
     else
     {
+        //for single digit conversion
         bytes.push_back(Utilities::convertIntToChar(data.attenuation));
     }
 
 
+    //send data to serial port
     m_serial->sendData(bytes);
 }
 
 void DataAcquisition::extractData(QByteArray data, int dataIndex)
 {
 
+    //depending on data type index byte array is extracted
     switch (dataIndex) {
     case SENSOR_DATA:
             extractSensorData(data.begin());
@@ -161,18 +169,9 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
         for (int i = 0; i < MAX_VALUES; i++) {
             pa_currents[i] = atoi(start);
             pa_currents_v[i] = (pa_currents[i] / 1023.0) * 5.0; // Calculate voltage
-
-
             float temp = pa_temps_c[i]; // Assuming you've already converted temperature to °C
             float zero_current_voltage = BASE_ZERO_CURRENT_VOLTAGE + (temp - 25) * TEMP_SLOPE;
-
-
-
             pa_currents_a[i] = (pa_currents_v[i] - zero_current_voltage) / SENSITIVITY;
-
-            // uint32_t value = static_cast<uint32_t>(pa_currents_a[i] * 1000.0);
-            // pa_currents_a[i] = static_cast<float>(value) / 1000.0;
-
             start = strchr(start, '_');
             if (start != NULL) start++;
         }
@@ -191,8 +190,6 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
         }
     }
 
-   // qDebug() << " Temp " << " Current " << " Alarm ";
-
     for(int i = 0 ; i < 7 ; i++)
     {
 
@@ -201,6 +198,7 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
         QString temp  = QString("%1").arg(pa_temps_c[i], 0, 'f', 3);
         QString alarm  = QString("%1").arg(pa_alarm[i], 0, 'f', 3);
 
+        //this sensor is updated in ui when signal is emitted
         m_sensorData.push_back(cur);
         m_sensorData.push_back(temp);
         m_sensorData.push_back(alarm);
@@ -210,5 +208,3 @@ void  DataAcquisition::extractSensorData(const char* buffer) {
     emit currentDataChanged();
 
 }
-
-

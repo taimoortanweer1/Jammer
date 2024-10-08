@@ -4,19 +4,6 @@
 int main(int argc, char *argv[])
 {
 
-
-
-
-    // SerialPort *serial = new SerialPort("COM1",9600);
-
-    // // Open serial port
-
-    // // Connect signal to slot
-    // QObject::connect(serial, &SerialPort::dataReceived, [serial](const QByteArray &data) {
-    //     qDebug() << "Received data:" << data;
-    // });
-
-
     QGuiApplication app(argc, argv);
     // Create the singleton instance
     DataAcquisition* m_DataAcquisition = DataAcquisition::instance();
