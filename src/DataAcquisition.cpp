@@ -37,7 +37,6 @@ void DataAcquisition::setSignalStrength(int value)
     }
 }
 
-
 void DataAcquisition::updateDataSimulator()
 {
     static int i = 0;

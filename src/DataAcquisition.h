@@ -129,17 +129,19 @@ private:
     SerialPort      *m_serial;
     QTimer          m_timerData;
     int             m_dataType;
+    QString         m_dataBuffer;
 
 
     //constructor with initializations
     DataAcquisition() {
 
-        m_serial = new SerialPort("COM1",9600);
+        m_serial = new SerialPort("COM8",115200);
         m_dataType = 0;
+
         QObject::connect(m_serial, &SerialPort::dataReceived, [this](const QByteArray &data) {
-            qDebug() << "Received data:" << data;
-            extractData(data, SENSOR_DATA);
+            handleDataReceived(data); // Call the new method to handle incoming data
         });
+
         connect(&m_timerData, SIGNAL(timeout()),this, SLOT(updateDataSimulator()));
         m_timerData.start(50);
     };
@@ -167,6 +169,23 @@ private:
      * @param buffer
      */
     void extractSensorData(const char *buffer);
+
+    // Updated method to handle received data
+    void handleDataReceived(const QByteArray &data) {
+        m_dataBuffer.append(QString::fromUtf8(data)); // Append new data to the buffer
+
+        // Check if we have a complete message (i.e., contains closing bracket ']')
+        if (m_dataBuffer.contains('!')) {
+            // Print the complete message
+            qDebug() << "Received complete data:" << m_dataBuffer;
+
+            // Call your extraction or processing method
+            extractSensorData(m_dataBuffer.toUtf8().constData());
+
+            // Clear the buffer after processing
+            m_dataBuffer.clear();
+        }
+    }
 };
 
 
