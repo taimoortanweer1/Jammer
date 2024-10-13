@@ -131,6 +131,15 @@ private:
     int             m_dataType;
     QString         m_dataBuffer;
 
+    int   pa_currents[MAX_VALUES];
+    int   pa_temps[MAX_VALUES];
+    int   pa_alarm[MAX_VALUES];
+
+    float pa_currents_v[MAX_VALUES];
+    float pa_temps_v[MAX_VALUES];
+
+    float pa_temps_c[MAX_VALUES];
+    float pa_currents_a[MAX_VALUES];
 
     //constructor with initializations
     DataAcquisition() {
@@ -166,21 +175,36 @@ private:
 
     /**
      * @brief extractSensorData, data parsing function for sensor data
-     * @param buffer
+     * @param data
      */
-    void extractSensorData(const char *buffer);
+   // void extractSensorData(const char* buffer);
+
+    /**
+     * @brief extractSensorData, data parsing function for sensor data
+     * @param data
+     */
+    void extractSensorData(const QByteArray &data);
+
+
+    /**
+     * @brief parseNmeaSentence
+     * @param sentence
+     * @param data
+     */
+    void parseNmeaSentence(const QString &sentence, QStringList &data);
 
     // Updated method to handle received data
     void handleDataReceived(const QByteArray &data) {
         m_dataBuffer.append(QString::fromUtf8(data)); // Append new data to the buffer
 
         // Check if we have a complete message (i.e., contains closing bracket ']')
-        if (m_dataBuffer.contains('!')) {
+        if (m_dataBuffer.contains('$')) {
             // Print the complete message
             qDebug() << "Received complete data:" << m_dataBuffer;
 
             // Call your extraction or processing method
-            extractSensorData(m_dataBuffer.toUtf8().constData());
+            extractData(m_dataBuffer.toUtf8().constData(), 0);
+            //extractSensorData(m_dataBuffer.toUtf8().constData());
 
             // Clear the buffer after processing
             m_dataBuffer.clear();
