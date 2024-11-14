@@ -33,8 +33,12 @@ Window {
             y: 155
             width: 922
             height: 507
+            //screen with video layout
+            VideoComponent {
+                id: videoScreen
+                playVideo: true
 
-
+            }
             //temp layer for ScreenSplash
             Item {}
 
@@ -53,12 +57,9 @@ Window {
                                }
             }
 
-            //screen with video layout
-            VideoComponent {
-                id: videoScreen
-                playVideo: true
 
-            }
+
+
 
         }
 
