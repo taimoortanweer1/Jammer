@@ -21,5 +21,6 @@
         <file>components/ScreenSplash.qml</file>
         <file>assets/images/arrow.png</file>
         <file>assets/images/DirectionArea.png</file>
+        <file>components/Joystick.qml</file>
     </qresource>
 </RCC>
