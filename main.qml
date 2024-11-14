@@ -6,6 +6,8 @@ Window {
     width: 1280
     height: 800
     visible: true
+    //color: "transparent" // Set the window background to transparent
+    //flags: Qt.Window | Qt.FramelessWindowHint // Remove window decorations
 
     Base {
         id: base
@@ -21,7 +23,6 @@ Window {
         onScreenIndexChanged:
         {
             layout.currentIndex= base.screenIndex
-
         }
 
         //stacks of screen items inside

@@ -29,19 +29,19 @@ Item {
 
     Item {
         id: item1
-        x: 874
+        x: -190
         y: 5
-        width: 145
-        height: 68
+        width: 205
+        height: 53
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.rightMargin: 8
+        anchors.rightMargin: -15
         anchors.topMargin: 8
 
         Text {
             id: progressBarText
-            x: 95
-            y: 0
+            x: 137
+            y: 6
             width: 50
             height: 50
             color: "#ffffff"
@@ -54,18 +54,26 @@ Item {
 
         MyProgressBar {
             id: myProgressBar
-            x: 51
-            y: 0
+            x: 101
+            y: 5
         }
 
         SignalBar {
 
             id: signalBar
 
-            x: 3
-            y: -5
+            x: 52
+            y: -3
             width: 50
             height: 50
+        }
+
+        Image {
+            id: phoneJammer
+            x: 3
+            y: 8
+            source: "qrc:/assets/images/PhoneJammer.png"
+            fillMode: Image.PreserveAspectFit
         }
     }
 
