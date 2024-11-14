@@ -21,10 +21,10 @@ Item {
               id: innerCircle
               x: joystick.width / 2 - width / 2
               y: joystick.height / 2 - height / 2
-              width: 50
-              height: 50
+              width: 30
+              height: 30
               color: "#00C310"
-              radius: 25
+              radius: 15
               border.width: 0
 
               // Mouse area for dragging

@@ -71,23 +71,45 @@ Item {
                 color: "white"
             }
 
-            Image {
-                id: directionArea
-                x: 577
-                y: 8
-                width: 115
-                height: 115
-                source: "qrc:/assets/images/DirectionArea.png"
-                fillMode: Image.PreserveAspectFit
+            Item
+            {
+                id: directionItem
+                height: 120
+                width: 120
+                anchors.right: parent.right
+                anchors.top: parent.top
+                anchors.rightMargin: 10
+                anchors.topMargin: 10
+
+
+                Image {
+                    id: arrow
+                    x: 35
+                    width: 50
+                    height: 70
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/assets/images/arrow.png"
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                Image {
+                    id: directionArea
+                    anchors.fill: parent
+                    source: "qrc:/assets/images/DirectionArea.png"
+                    fillMode: Image.PreserveAspectFit
+                }
             }
-            Image {
-                id: arrow
-                x: 611
-                y: 30
-                width: 50
-                height: 70
-                source: "qrc:/assets/images/arrow.png"
-                fillMode: Image.PreserveAspectFit
+            Joystick
+            {
+                id: joystick
+                width: 120
+                height: 120
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.rightMargin: -259
+                anchors.bottomMargin: -234
+                anchors.verticalCenterOffset: 261
+                anchors.horizontalCenterOffset: 286
             }
 
             renderTarget: Canvas.Image
