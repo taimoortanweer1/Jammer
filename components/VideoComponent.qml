@@ -10,10 +10,10 @@ Item {
 
     Rectangle {
         id:    cameraUI
-        x: 40
+        x: 0
         y: -60
-        width: 600
-        height: 600
+        width: 700
+        height: 650
 
 
         CaptureSession {
@@ -50,12 +50,44 @@ Item {
 
             Text {
                 id: azim
-                text: "23.44"
+                x: 8
+                y: 8
+                width: 62
+                height: 25
+                text: "Elev : 23.44"
+                color: "white"
 
             }
+
+
+
             Text {
                 id: elev
-                text: "23.44"
+                x: 8
+                y: 30
+                width: 62
+                height: 25
+                text: "Azim : 23.44"
+                color: "white"
+            }
+
+            Image {
+                id: directionArea
+                x: 577
+                y: 8
+                width: 115
+                height: 115
+                source: "qrc:/assets/images/DirectionArea.png"
+                fillMode: Image.PreserveAspectFit
+            }
+            Image {
+                id: arrow
+                x: 611
+                y: 30
+                width: 50
+                height: 70
+                source: "qrc:/assets/images/arrow.png"
+                fillMode: Image.PreserveAspectFit
             }
 
             renderTarget: Canvas.Image
@@ -77,6 +109,13 @@ Item {
                 ctx.clip();
                 ctx.fill();
 
+                ctx.strokeStyle = "green";
+                ctx.lineWidth = 2; // Adjust boundary thickness
+                ctx.lineCap = "round"; // Optional: adjust line cap style
+                ctx.beginPath();
+                ctx.rect(0,0, width, height, );
+                ctx.stroke();
+
 
 
                 // Draw inner circle arc boundary in white
@@ -88,6 +127,8 @@ Item {
                 ctx.stroke();
 
             }
+
+
         }
 
         Component.onCompleted:
@@ -102,6 +143,7 @@ Item {
                 StateChangeScript {
                     script: {
                         camera.start()
+
                     }
                 }
             },

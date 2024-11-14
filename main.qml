@@ -30,13 +30,14 @@ Window {
 
             id: layout
             x: 317
-            y: 155
-            width: 922
-            height: 507
+            y: 147
+            width: 920
+            height: 550
+
             //screen with video layout
             VideoComponent {
                 id: videoScreen
-                playVideo: true
+                playVideo: false
 
             }
             //temp layer for ScreenSplash
