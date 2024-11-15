@@ -64,7 +64,7 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
     m_uiData.status      = QVariant(param2).toBool();
     m_uiData.attenuation = QVariant(param3).toInt();
 
-    qDebug() << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
+    qDebug()  << __FUNCTION__ << "---" << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
 
     generateData(m_uiData);
 }
@@ -279,7 +279,7 @@ void  DataAcquisition::extractSensorData(const QByteArray &data)
         for(int i = 0 ; i < 7 ; i++)
         {
 
-            //qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
+            qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
             QString cur   = QString("%1").arg(pa_currents_a[i], 0, 'f', 3);
             QString temp  = QString("%1").arg(pa_temps_c[i], 0, 'f', 3);
             QString alarm  = QString("%1").arg(pa_alarm[i], 0, 'f', 3);

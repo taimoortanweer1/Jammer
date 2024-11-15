@@ -39,10 +39,13 @@ Window {
                 id: videoScreen
                 playVideo: false
 
+                currentDataLocal: DataAcquisition.currentData
+
+
                 //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
-                // onDataChanged: (powerAmpNumber,powerAmpStatus) =>  {
-                //                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus)
-                //                }
+                onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
+                                   DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+                               }
 
             }
             //temp layer for ScreenSplash
@@ -56,6 +59,7 @@ Window {
                 // y: 189
 
                 //PA data from controller
+                //this is a data structure
                 currentDataLocal: DataAcquisition.currentData
 
                 //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
@@ -63,10 +67,6 @@ Window {
                                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
                                }
             }
-
-
-
-
 
         }
 

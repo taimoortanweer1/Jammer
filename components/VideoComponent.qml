@@ -5,9 +5,14 @@ Item {
 
 
     id: itemTop
-    property bool playVideo: false
     width: 900
     height: 650
+    property bool playVideo: false
+    property bool   powerAmpStatus: false
+    property int    powerAmpNumber: 0
+    property int    powerAmpAtten : 0
+    signal          dataChanged(paNumber: int, status: bool, attentuation: int)
+    property var    currentDataLocal
 
 
     Rectangle {
@@ -218,7 +223,7 @@ Item {
             width: 67
             height: 25
             text: "PA"
-            anchors.left: parent.left
+            anchors.left: pASettingsMini.left
             anchors.bottom: pASettingsMini.top
             anchors.leftMargin: 0
             anchors.bottomMargin: 0
@@ -256,6 +261,14 @@ Item {
             anchors.leftMargin: 0
             anchors.rightMargin: 0
             anchors.bottomMargin: 0
+
+            onDataChanged: {
+
+                powerAmpNumber = _powerAmpNumber;
+                powerAmpStatus = _powerAmpStatus;
+                powerAmpAtten = 1
+                itemTop.dataChanged(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+            }
         }
 
         TextCustom
@@ -330,6 +343,10 @@ Item {
             anchors.bottomMargin: 330
 
         }
+    }
+
+    onCurrentDataLocalChanged:   {
+        pAStatusMini.currentDataForPAStatus = currentDataLocal
     }
 }
 

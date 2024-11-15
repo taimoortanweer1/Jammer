@@ -8,16 +8,13 @@ Item {
     property int     powerAmpNumber: 0
     property bool    powerAmpStatus: false
 
+    property var currentDataForPAStatus
     ListModel {
         id: dataModel
-        ListElement{ paNumber: 0}
-        ListElement{ paNumber: 1}
-        ListElement{ paNumber: 2}
-        ListElement{ paNumber: 3}
-        ListElement{ paNumber: 4}
-        ListElement{ paNumber: 5}
-        ListElement{ paNumber: 6}
 
+        ListElement {
+            alrm: "0"
+        }
     }
 
     Component {
@@ -26,8 +23,7 @@ Item {
         {
             paNumber: index
             title: index+1
-            paStatus: powerAmpStatus
-
+            vswr:alrm
         }
     }
 
@@ -37,6 +33,16 @@ Item {
         model: dataModel
         delegate: dataDelegate
 
+
+    }
+
+
+    onCurrentDataForPAStatusChanged:   {
+
+        for(var i = 0; i < 7 ;i++)
+        {
+            dataModel.set(i, {"alrm":currentDataForPAStatus[i*3 + 2]})
+        }
 
     }
 

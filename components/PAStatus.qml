@@ -4,7 +4,7 @@ import QtQuick.Controls
 Item {
 
     //local use
-    property bool paStatus: false
+    property int vswr: 0
     //local use
     property int    paNumber: 0
     property string title: "0"
@@ -33,7 +33,7 @@ Item {
 
         StatusSignal {
             id: statusSignal
-            statusflag: paStatus
+            statusflag: vswr ? true : false
             x: 75
             anchors.right: parent.right
             anchors.top: parent.top

@@ -5,9 +5,9 @@ Item {
     height: 400
     width: 150
 
-    property int     powerAmpNumber: 0
-    property bool    powerAmpStatus: false
-
+    property int     _powerAmpNumber: 0
+    property bool    _powerAmpStatus: false
+    signal           dataChanged(paNumber: int, status: bool)
 
 
     ListModel {
@@ -30,9 +30,9 @@ Item {
             title: index+1
             onPowerStatusChanged: {
 
-                powerAmpNumber = index;
-                powerAmpStatus = powerStatus;
-                root.dataChanged(powerAmpNumber,powerAmpStatus)
+                _powerAmpNumber = index;
+                _powerAmpStatus = powerStatus;
+                root.dataChanged(_powerAmpNumber,_powerAmpStatus)
             }
 
         }
