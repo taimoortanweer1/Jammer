@@ -4,6 +4,7 @@ import QtMultimedia
 Item {
 
 
+    id: itemTop
     property bool playVideo: false
     width: 900
     height: 650
@@ -74,13 +75,10 @@ Item {
             Item
             {
                 id: directionItem
+                x: 572
+                y: 8
                 height: 120
                 width: 120
-               // anchors.right: parent.right
-              //  anchors.top: parent.top
-                anchors.rightMargin: 10
-                anchors.topMargin: 10
-
 
                 Image {
                     id: arrow
@@ -185,20 +183,25 @@ Item {
     }
 
     Item{
-        id: paControl123
+        id: paControls
+        x: 744
+        y: 318
+        width: 118
+        height: 329
 
 
         TextCustom
         {
-            id: textRow0
-            y: 291
-            height: 25
-            text: "PA Controls"
+            id: textTitle
+
+            text: "PA CONTROLS"
             anchors.left: pASettingsMini.left
             anchors.right: pASettingsMini.right
-            anchors.bottom: textRow1.top
-            anchors.leftMargin: 0
-            anchors.rightMargin: 0
+            anchors.top: parent.top
+            anchors.bottom: textNumber.top
+            anchors.leftMargin: 6
+            anchors.rightMargin: -12
+            anchors.topMargin: 0
             anchors.bottomMargin: 0
             color: "white"
             font.styleName: "Bold"
@@ -210,17 +213,16 @@ Item {
 
         TextCustom
         {
-            id: textRow1
-            y: 322
+            id: textNumber
+            y: 29
+            width: 67
             height: 25
             text: "PA #"
-            anchors.left: pASettingsMini.left
-            anchors.right: textRow2.left
+            anchors.left: parent.left
             anchors.bottom: pASettingsMini.top
             anchors.leftMargin: 0
-            anchors.rightMargin: 0
             anchors.bottomMargin: 0
-            color: "green"
+            color: "#00c310"
             font.styleName: "Bold"
             font.pointSize: 12
             font.weight: Font.ExtraBold
@@ -229,17 +231,15 @@ Item {
 
         TextCustom
         {
-            id: textRow2
-            y: 322
+            id: textStatus
             height: 25
-            text: "Status"
-            anchors.left: textRow1.left
+
+            text: "STATUS"
             anchors.right: pASettingsMini.right
             anchors.bottom: pASettingsMini.top
-            anchors.leftMargin: 59
             anchors.rightMargin: 0
             anchors.bottomMargin: 0
-            color: "green"
+            color: "#00c310"
             font.styleName: "Bold"
             font.pointSize: 12
             font.weight: Font.ExtraBold
@@ -248,17 +248,16 @@ Item {
 
         PASettingsMini {
             id: pASettingsMini
-            x: 745
-            y: 347
-            width: 115
+            y: 54
             height: 275
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: 0
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
         }
     }
-
-
-
-
-
 }
 
 

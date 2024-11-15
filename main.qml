@@ -52,8 +52,9 @@ Window {
             //screen with Powre Amplifier settings
             ScreenPowerAmpSettings {
                 id: screenPowerAmp
-                x: 341
-                y: 189
+                // x: 341
+                // y: 189
+
                 //PA data from controller
                 currentDataLocal: DataAcquisition.currentData
 
