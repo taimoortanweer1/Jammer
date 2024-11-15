@@ -4,12 +4,11 @@ import QtQuick.Controls
 Item {
 
     //local use
-    property int vswr: 0
-    //local use
-    property int    paNumber: 0
-    property string title: "0"
-    width: 120
-    height: 35
+    property int    vswr    :  0
+    property int    paNumber:  0
+    property string title   : "0"
+    width                   :120
+    height                  : 35
 
     Rectangle {
         id: rectangle

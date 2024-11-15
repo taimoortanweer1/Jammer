@@ -13,7 +13,7 @@ Item {
         id: dataModel
 
         ListElement {
-            alrm: "0"
+            alrm: 0
         }
     }
 
@@ -41,7 +41,7 @@ Item {
 
         for(var i = 0; i < 7 ;i++)
         {
-            dataModel.set(i, {"alrm":currentDataForPAStatus[i*3 + 2]})
+            dataModel.set(i, {"alrm":Number(currentDataForPAStatus[i*3 + 2])})
         }
 
     }

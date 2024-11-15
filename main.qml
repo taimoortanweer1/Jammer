@@ -37,7 +37,7 @@ Window {
             //screen with video layout
             VideoComponent {
                 id: videoScreen
-                playVideo: false
+                playVideo: true
 
                 currentDataLocal: DataAcquisition.currentData
 
@@ -55,8 +55,6 @@ Window {
             //screen with Powre Amplifier settings
             ScreenPowerAmpSettings {
                 id: screenPowerAmp
-                // x: 341
-                // y: 189
 
                 //PA data from controller
                 //this is a data structure
