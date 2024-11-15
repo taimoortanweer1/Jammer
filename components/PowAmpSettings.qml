@@ -145,7 +145,7 @@ Item {
                 anchors.top: parent.top
                 anchors.leftMargin: 8
                 anchors.topMargin: 17
-
+                visible: false
                 onCheckedChanged: {
 
                     powerStatus = checked
