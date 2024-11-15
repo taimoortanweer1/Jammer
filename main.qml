@@ -30,7 +30,7 @@ Window {
 
             id: layout
             x: 317
-            y: 147
+            y: 90
             width: 920
             height: 550
 
@@ -38,6 +38,11 @@ Window {
             VideoComponent {
                 id: videoScreen
                 playVideo: false
+
+                //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
+                // onDataChanged: (powerAmpNumber,powerAmpStatus) =>  {
+                //                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus)
+                //                }
 
             }
             //temp layer for ScreenSplash
