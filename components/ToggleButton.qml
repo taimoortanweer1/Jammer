@@ -40,8 +40,6 @@ Rectangle {
             else
                 color = "#C30010"
 
-
-
         }
     }
 
