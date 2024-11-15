@@ -8,8 +8,6 @@ Item {
     property int     powerAmpNumber: 0
     property bool    powerAmpStatus: false
 
-    signal          dataChanged(paNumber: int, status: bool)
-
 
 
     ListModel {
