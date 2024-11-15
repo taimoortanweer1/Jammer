@@ -217,7 +217,7 @@ Item {
             y: 29
             width: 67
             height: 25
-            text: "PA #"
+            text: "PA"
             anchors.left: parent.left
             anchors.bottom: pASettingsMini.top
             anchors.leftMargin: 0
@@ -234,7 +234,7 @@ Item {
             id: textStatus
             height: 25
 
-            text: "STATUS"
+            text: "POWER"
             anchors.right: pASettingsMini.right
             anchors.bottom: pASettingsMini.top
             anchors.rightMargin: 0
@@ -256,6 +256,79 @@ Item {
             anchors.leftMargin: 0
             anchors.rightMargin: 0
             anchors.bottomMargin: 0
+        }
+
+        TextCustom
+        {
+            id: textTitleStatus
+            y: -324
+            height: 23
+
+            text: "PA MONITORING"
+            anchors.left: pAStatusMini.left
+            anchors.right: pAStatusMini.right
+            anchors.bottom: pAStatusMini.top
+            anchors.leftMargin: 3
+            anchors.rightMargin: -3
+            anchors.bottomMargin: 24
+            color: "white"
+            font.styleName: "Bold"
+            font.pointSize: 12
+            font.weight: Font.ExtraBold
+
+
+        }
+
+        TextCustom
+        {
+            id: textNumberStatus
+            y: -302
+            width: 55
+            height: 25
+            text: "PA"
+            anchors.left: parent.left
+            anchors.bottom: pAStatusMini.top
+            anchors.leftMargin: 0
+            anchors.bottomMargin: 0
+            color: "#00c310"
+            font.styleName: "Bold"
+            font.pointSize: 12
+            font.weight: Font.ExtraBold
+
+        }
+
+        TextCustom
+        {
+            id: textStatusStatus
+            x: 60
+            y: -302
+            width: 50
+            height: 25
+
+            text: "STATUS"
+            anchors.right: pAStatusMini.right
+            anchors.bottom: pAStatusMini.top
+            anchors.rightMargin: 8
+            anchors.bottomMargin: 0
+            color: "#00c310"
+            font.styleName: "Bold"
+            font.pointSize: 12
+            font.weight: Font.ExtraBold
+
+        }
+        PAStatusMini{
+
+
+            id: pAStatusMini
+            y: -277
+            height: 276
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: 0
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 330
+
         }
     }
 }
