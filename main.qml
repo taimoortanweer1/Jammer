@@ -30,11 +30,24 @@ Window {
 
             id: layout
             x: 317
-            y: 155
-            width: 922
-            height: 507
+            y: 90
+            width: 920
+            height: 550
+
+            //screen with video layout
+            VideoComponent {
+                id: videoScreen
+                playVideo: true
+
+                currentDataLocal: DataAcquisition.currentData
 
 
+                //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
+                onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
+                                   DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
+                               }
+
+            }
             //temp layer for ScreenSplash
             Item {}
 
@@ -42,22 +55,15 @@ Window {
             //screen with Powre Amplifier settings
             ScreenPowerAmpSettings {
                 id: screenPowerAmp
-                x: 341
-                y: 189
+
                 //PA data from controller
+                //this is a data structure
                 currentDataLocal: DataAcquisition.currentData
 
                 //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
                 onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
                                    DataAcquisition.getUIUpdate(powerAmpNumber,powerAmpStatus,powerAmpAtten)
                                }
-            }
-
-            //screen with video layout
-            VideoComponent {
-                id: videoScreen
-                playVideo: true
-
             }
 
         }

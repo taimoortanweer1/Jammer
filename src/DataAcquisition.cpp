@@ -64,7 +64,7 @@ void DataAcquisition::getUIUpdate(QVariant param1, QVariant param2, QVariant par
     m_uiData.status      = QVariant(param2).toBool();
     m_uiData.attenuation = QVariant(param3).toInt();
 
-    qDebug() << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
+    //qDebug()  << __FUNCTION__ << "---" << "m_uiData.paNumber " << m_uiData.paNumber << " m_uiData.status " << m_uiData.status <<  " m_uiData.attenuation " << m_uiData.attenuation;
 
     generateData(m_uiData);
 }

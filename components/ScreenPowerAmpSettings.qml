@@ -17,9 +17,9 @@ Item {
         id: dataModel
 
         ListElement {
-            curr: "0.00";
-            temp: "0.00";
-            alrm: "0"
+            curr: 0.00;
+            temp: 0.00;
+            alrm: 0
 
         }
     }
@@ -60,6 +60,6 @@ Item {
     onCurrentDataLocalChanged:   {
 
         for(var i = 0; i < 7 ;i++)
-            dataModel.set(i, {"curr":currentDataLocal[i*3 + 0],"temp":currentDataLocal[i*3 + 1],"alrm":currentDataLocal[i*3 + 2]})
+            dataModel.set(i, {"curr":Number(currentDataLocal[i*3 + 0]),"temp":Number(currentDataLocal[i*3 + 1]),"alrm":Number(currentDataLocal[i*3 + 2])})
     }
 }

@@ -5,8 +5,9 @@ Text {
     height: 25
     width: 50
     color: "#ffffff"
-    text: qsTr("textkjkj")
+    text: qsTr("text")
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     font.family: "Arial"
+
 }

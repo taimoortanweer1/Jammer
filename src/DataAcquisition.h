@@ -200,7 +200,7 @@ private:
         // Check if we have a complete message (i.e., contains closing bracket ']')
         if (m_dataBuffer.contains('$')) {
             // Print the complete message
-            qDebug() << "Received complete data:" << m_dataBuffer;
+            //qDebug() << "Received complete data:" << m_dataBuffer;
 
             // Call your extraction or processing method
             extractData(m_dataBuffer.toUtf8().constData(), 0);
