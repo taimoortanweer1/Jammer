@@ -50,11 +50,25 @@ void DataAcquisition::setCompass(float value)
     }
 }
 
+QVariantList DataAcquisition::getPanTiltData()
+{
+    return m_PanTilt;
+}
+void DataAcquisition::setPanTiltData(QVariantList values)
+{
+
+        m_PanTilt = values;
+        emit signalPanTiltDataChanged(values);
+
+}
 void DataAcquisition::updateDataSimulator()
 {
     static int i = 0;
     static int j = 0;
     static float k = -90;
+    static float azim = -90;
+    static float elev = 0;
+
     if(i > 99)
     {
         i = 0;
@@ -64,16 +78,28 @@ void DataAcquisition::updateDataSimulator()
         j = 0;
     }
 
+
+
     if(k > 360)
         k=0;
+
+    azim = k;
+    elev = j;
 
     k++;
     i++;
     j=j+4;
 
+
     setbattery(i);
     setSignalStrength(j);
     setCompass(k);
+    QVariantList values;
+
+    values.push_back(azim);
+    values.push_back(elev);
+    setPanTiltData(values);
+
 
 }
 
