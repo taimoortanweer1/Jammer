@@ -17,6 +17,8 @@ class DataAcquisition : public QObject {
     Q_PROPERTY(int battery                READ getbattery        WRITE setbattery        NOTIFY batteryChanged)
     Q_PROPERTY(int signalStrength         READ getSignalStrength WRITE setSignalStrength NOTIFY signalStrengthChanged)
     Q_PROPERTY(QVariantList  currentData  READ getCurrentData                            NOTIFY currentDataChanged)
+    Q_PROPERTY(float compass              READ getCompass        WRITE setCompass        NOTIFY signalCompassChanged)
+    Q_PROPERTY(QVariantList  panTiltData  READ getPanTiltData    WRITE setPanTiltData    NOTIFY signalPanTiltDataChanged)
 
 
 
@@ -77,6 +79,31 @@ public:
     QVariantList getCurrentData() const;
 
 
+    /**
+     * @brief getCompass: this will get value from backend
+     * @return
+     */
+    float getCompass() const;
+
+
+    /**
+     * @brief setCompass: this is set value to UI
+     * @param value
+     */
+    void setCompass(float value);
+
+    /**
+     * @brief getPanTiltData: this is get values from backend
+     * @return
+     */
+    QVariantList getPanTiltData();
+
+    /**
+     * @brief setPanTiltData: this will set data to UI
+     * @param values
+     */
+    void setPanTiltData(QVariantList values);
+
 signals:
 
     /**
@@ -96,6 +123,19 @@ signals:
      */
     void currentDataChanged();
 
+
+    /**
+     * @brief signalCompassChanged, to update UI, this signal is called
+     * @param value
+     */
+    void signalCompassChanged(float value);
+
+
+    /**
+     * @brief signalPanTiltDataChanged: to update UI this signal is called
+     * @param values
+     */
+    void signalPanTiltDataChanged(QVariantList values);
 
 public slots:
 
@@ -123,6 +163,8 @@ private:
     int             m_signalStrength;
     UIData          m_uiData;
     QVariantList    m_sensorData;
+    float           m_compass;
+    QVariantList    m_PanTilt;
 
 
     //Backend Logic Data

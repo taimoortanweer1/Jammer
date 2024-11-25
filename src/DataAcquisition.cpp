@@ -37,10 +37,38 @@ void DataAcquisition::setSignalStrength(int value)
     }
 }
 
+float DataAcquisition::getCompass() const
+{
+    return m_compass;
+}
+
+void DataAcquisition::setCompass(float value)
+{
+    if (value != m_compass) {
+        m_compass = value;
+        emit signalCompassChanged(value);
+    }
+}
+
+QVariantList DataAcquisition::getPanTiltData()
+{
+    return m_PanTilt;
+}
+void DataAcquisition::setPanTiltData(QVariantList values)
+{
+
+        m_PanTilt = values;
+        emit signalPanTiltDataChanged(values);
+
+}
 void DataAcquisition::updateDataSimulator()
 {
     static int i = 0;
     static int j = 0;
+    static float k = -90;
+    static float azim = -90;
+    static float elev = 0;
+
     if(i > 99)
     {
         i = 0;
@@ -50,11 +78,28 @@ void DataAcquisition::updateDataSimulator()
         j = 0;
     }
 
+
+
+    if(k > 360)
+        k=0;
+
+    azim = k;
+    elev = j;
+
+    k++;
     i++;
     j=j+4;
 
+
     setbattery(i);
     setSignalStrength(j);
+    setCompass(k);
+    QVariantList values;
+
+    values.push_back(azim);
+    values.push_back(elev);
+    setPanTiltData(values);
+
 
 }
 
@@ -129,88 +174,6 @@ void DataAcquisition::extractData(QByteArray data, int dataIndex)
     }
 
 }
-
-/*
-void  DataAcquisition::extractSensorData(const char* buffer) {
-
-    m_sensorData.clear();
-
-    int pa_currents[MAX_VALUES];
-    int pa_temps[MAX_VALUES];
-    int pa_alarm[MAX_VALUES];
-
-    float pa_currents_v[MAX_VALUES];
-    float pa_temps_v[MAX_VALUES];
-    float pa_alarm_v[MAX_VALUES];
-
-    float pa_temps_c[MAX_VALUES];
-    float pa_currents_a[MAX_VALUES];
-    // Extract PA_Temps
-
-
-    const char* start = strstr(buffer, "PA_Temps =[");
-    if (start != NULL) {
-        start += strlen("PA_Temps =[");
-        for (int i = 0; i < MAX_VALUES; i++) {
-            pa_temps[i] = atoi(start);
-            pa_temps_v[i] = (pa_temps[i] / 1023.0) * 5.0;
-            // pa_temps_c[i] = (pa_temps_v[i] - 0.5) * 100;
-            pa_temps_c[i] = (pa_temps_v[i] - MCP9701_OFFSET_V) / MCP9701_SENSITIVITY;
-            start = strchr(start, '_');
-            if (start != NULL) start++;
-        }
-    }
-
-    // Extract PA_Currents
-    start = strstr(buffer, "PA_Currents =[");
-    if (start != NULL) {
-        start += strlen("PA_Currents =[");
-        for (int i = 0; i < MAX_VALUES; i++) {
-            pa_currents[i] = atoi(start);
-            pa_currents_v[i] = (pa_currents[i] / 1023.0) * 5.0; // Calculate voltage
-            float temp = pa_temps_c[i]; // Assuming you've already converted temperature to °C
-            float zero_current_voltage = BASE_ZERO_CURRENT_VOLTAGE + (temp - 25) * TEMP_SLOPE;
-            pa_currents_a[i] = (pa_currents_v[i] - zero_current_voltage) / SENSITIVITY;
-            start = strchr(start, '_');
-            if (start != NULL) start++;
-        }
-    }
-
-
-    // Extract PA_ALARM
-    start = strstr(buffer, "PA_ALARM =[");
-    if (start != NULL) {
-        start += strlen("PA_ALARM =[");
-        for (int i = 0; i < MAX_VALUES; i++) {
-            pa_alarm[i] = atoi(start);
-            //pa_alarm_v[i] = (pa_alarm[i] / 1.0) * 5.0;
-            start = strchr(start, '_');
-            if (start != NULL) start++;
-        }
-    }
-
-    for(int i = 0 ; i < 7 ; i++)
-    {
-
-        //qDebug() <<  pa_temps_c[i] << pa_currents_a[i] << pa_alarm[i] ;
-        QString cur   = QString("%1").arg(pa_currents_a[i], 0, 'f', 3);
-        QString temp  = QString("%1").arg(pa_temps_c[i], 0, 'f', 3);
-        QString alarm  = QString("%1").arg(pa_alarm[i], 0, 'f', 3);
-
-        //this sensor is updated in ui when signal is emitted
-        m_sensorData.push_back(cur);
-        m_sensorData.push_back(temp);
-        m_sensorData.push_back(alarm);
-
-    }
-
-    emit currentDataChanged();
-
-}
-
-*/
-
-
 
 void DataAcquisition::parseNmeaSentence(const QString &sentence, QStringList &data) {
     // Remove checksum and split sentence into fields

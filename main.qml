@@ -39,8 +39,12 @@ Window {
                 id: videoScreen
                 playVideo: true
 
+                //this is data structure
                 currentDataLocal: DataAcquisition.currentData
 
+                compass: DataAcquisition.compass
+
+                panTilt: DataAcquisition.panTiltData
 
                 //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
                 onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
