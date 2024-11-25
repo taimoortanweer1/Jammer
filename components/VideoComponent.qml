@@ -13,6 +13,7 @@ Item {
     property int    powerAmpAtten : 0
     signal          dataChanged(paNumber: int, status: bool, attentuation: int)
     property var    currentDataLocal
+    property real    compass: 0.0
 
 
     Rectangle {
@@ -93,6 +94,7 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     source: "qrc:/assets/images/arrow.png"
                     fillMode: Image.PreserveAspectFit
+                    rotation: compass
                 }
 
                 Image {

@@ -40,7 +40,7 @@ Window {
                 playVideo: true
 
                 currentDataLocal: DataAcquisition.currentData
-
+                compass: DataAcquisition.compass
 
                 //when UI data is updated, this slot is called that will eventually call c++ function to send data to serial
                 onDataChanged: (powerAmpNumber,powerAmpStatus,powerAmpAtten) =>  {
