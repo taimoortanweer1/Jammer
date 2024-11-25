@@ -13,8 +13,8 @@ Item {
     property int    powerAmpAtten : 0
     signal          dataChanged(paNumber: int, status: bool, attentuation: int)
     property var    currentDataLocal
-    property real    compass: 0.0
-
+    property real   compass: 0.0
+    property var    panTilt
 
     Rectangle {
         id:    cameraUI
@@ -61,7 +61,7 @@ Item {
                 y: 8
                 width: 62
                 height: 25
-                text: "Elev : 23.44"
+                text: "Elev :" + panTilt[0]
                 color: "white"
 
             }
@@ -74,7 +74,7 @@ Item {
                 y: 30
                 width: 62
                 height: 25
-                text: "Azim : 23.44"
+                text: "Azim :" + panTilt[1]
                 color: "white"
             }
 

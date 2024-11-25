@@ -8,7 +8,7 @@ Item {
     property int     powerAmpNumber: 0
     property bool    powerAmpStatus: false
 
-    property var currentDataForPAStatus
+    property var     currentDataForPAStatus
     ListModel {
         id: dataModel
 
